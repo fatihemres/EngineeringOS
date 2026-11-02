@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Foundation core metadata v0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "package_id",
+    "package_status",
+    "architecture",
+    "date",
+    "license",
+    "license_scope",
+    "license_decision_status",
+    "implementations",
+    "source_authority"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "package_id": {
+      "const": "engineeringos-foundation"
+    },
+    "package_status": {
+      "const": "FOUNDATION_DRAFT_PENDING_CI_AND_INTEGRATION"
+    },
+    "architecture": {
+      "const": "public-core-private-workspace"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "license": {
+      "const": "Apache-2.0"
+    },
+    "license_scope": {
+      "const": "original-engineeringos-public-core"
+    },
+    "license_decision_status": {
+      "const": "PO_APPROVED"
+    },
+    "implementations": {
+      "type": "object",
+      "required": [
+        "read_only_doctor",
+        "chatgpt_kit_export",
+        "experience_validation",
+        "agent_runtime",
+        "github_sync",
+        "skill_installation"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "read_only_doctor": {
+          "const": "prototype"
+        },
+        "chatgpt_kit_export": {
+          "const": "prototype"
+        },
+        "experience_validation": {
+          "const": "schema_subset_and_public_fixture_gate"
+        },
+        "agent_runtime": {
+          "const": "not_implemented"
+        },
+        "github_sync": {
+          "const": "not_implemented"
+        },
+        "skill_installation": {
+          "const": "not_implemented"
+        }
+      }
+    },
+    "source_authority": {
+      "const": "project-owner-and-project-repo-first"
+    }
+  }
+}

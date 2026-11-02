@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EngineeringOS Project Profile v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project",
+    "technology",
+    "source_docs",
+    "governance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "project": {
+      "type": "object",
+      "required": [
+        "name",
+        "summary",
+        "repository"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "summary": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "repository": {
+          "type": "string",
+          "pattern": "^(?=[^/]{1,39}/)[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*/(?!\\.{1,2}(?![\\s\\S]))[.A-Za-z0-9_-]{1,100}(?![\\s\\S])"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "technology": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "source_docs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(?!(?:[Cc][Oo][Nn]|[Pp][Rr][Nn]|[Aa][Uu][Xx]|[Nn][Uu][Ll]|(?:[Cc][Oo][Mm]|[Ll][Pp][Tt])[1-9])(?:[./ ]|$))(?![. ]+(?:/|$))[A-Za-z0-9_. -]*[A-Za-z0-9_-](?:/(?!(?:[Cc][Oo][Nn]|[Pp][Rr][Nn]|[Aa][Uu][Xx]|[Nn][Uu][Ll]|(?:[Cc][Oo][Mm]|[Ll][Pp][Tt])[1-9])(?:[./ ]|$))(?![. ]+(?:/|$))[A-Za-z0-9_. -]*[A-Za-z0-9_-])*(?![\\s\\S])"
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "governance": {
+      "type": "object",
+      "required": [
+        "owner_approval_required",
+        "preserve_existing_rules"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "owner_approval_required": {
+          "type": "boolean",
+          "const": true
+        },
+        "preserve_existing_rules": {
+          "type": "boolean",
+          "const": true
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "external_network_default": {
+          "enum": [
+            "off",
+            "approved-only"
+          ]
+        },
+        "production_data_testing": {
+          "const": "prohibited"
+        }
+      }
+    }
+  }
+}

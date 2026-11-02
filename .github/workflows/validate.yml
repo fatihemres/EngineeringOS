@@ -1,0 +1,30 @@
+name: Validate Foundation
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Unit tests
+        run: python -B -m unittest discover -s tests -v
+      - name: Check public JSON, registry, manifest and fixtures
+        run: python -B tools/engineeringos.py check-json
+      - name: Verify public example provenance
+        run: python -B tools/engineeringos.py validate-experience --public examples/synthetic-ui-review.json

@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "project": {
+    "name": "Cloudberry Desk",
+    "summary": "Fictional desktop planner for synthetic weather cards.",
+    "repository": "fictional-lab/cloudberry-desk",
+    "type": "desktop-application"
+  },
+  "technology": {
+    "frontend": "HTML",
+    "storage": "local files"
+  },
+  "source_docs": [
+    "README.md",
+    "docs/design.md"
+  ],
+  "governance": {
+    "owner_approval_required": true,
+    "preserve_existing_rules": true
+  },
+  "privacy": {
+    "external_network_default": "off",
+    "production_data_testing": "prohibited"
+  }
+}

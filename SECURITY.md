@@ -6,4 +6,4 @@ Threats: malicious third-party skill instructions, MCP tool impersonation, insta
 
 Never run untrusted fork code with elevated GitHub Action permissions or write-scoped repository tokens; public PR CI must use least privilege and avoid `pull_request_target` execution of contributor code. Pin external dependencies/Actions by reviewed immutable refs at production hardening; the draft workflow is a starting example only.
 
-Vulnerability reports should be routed through a future private security advisories channel, not posted with exploitation details publicly. The repository exists. A private reporting channel and its maintainers are pending owner configuration.
+GitHub Private Vulnerability Reporting is enabled. Use the repository's [private security reporting interface](https://github.com/fatihemres/EngineeringOS/security/advisories/new). Keep sensitive vulnerability details out of public Issues. Repository owner `fatihemres` handles initial private security-report intake.
