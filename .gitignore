@@ -1,0 +1,17 @@
+# Private and generated material must never be committed
+.env
+.env.*
+!.env.example
+.engineeringos/private/
+private-workspace/
+workspace-private/
+raw-traces/
+*.secret
+__pycache__/
+*.py[cod]
+.pytest_cache/
+out/
+build/
+dist/
+node_modules/
+.DS_Store
