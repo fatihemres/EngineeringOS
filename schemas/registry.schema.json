@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Capability registry v0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "rules",
+    "capabilities"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "status": {
+      "const": "candidate_registry_not_adoption"
+    },
+    "rules": {
+      "type": "object",
+      "required": [
+        "third_party_code_bundled",
+        "auto_install",
+        "license_unknown_blocks_redistribution"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "third_party_code_bundled": {
+          "const": false
+        },
+        "auto_install": {
+          "const": false
+        },
+        "license_unknown_blocks_redistribution": {
+          "const": true
+        }
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "role",
+          "url",
+          "status",
+          "license_verified"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?![\\s\\S])"
+          },
+          "type": {
+            "enum": [
+              "skill",
+              "mcp",
+              "cli",
+              "model",
+              "harness",
+              "framework",
+              "reference",
+              "library"
+            ]
+          },
+          "role": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https://[A-Za-z0-9.-]+(?:/[^\\s]*)?(?![\\s\\S])"
+          },
+          "status": {
+            "enum": [
+              "CANDIDATE",
+              "RESEARCHED",
+              "ON_HOLD"
+            ]
+          },
+          "license_verified": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

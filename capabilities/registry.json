@@ -1,0 +1,127 @@
+{
+  "schema_version": "0.1",
+  "status": "candidate_registry_not_adoption",
+  "rules": {
+    "third_party_code_bundled": false,
+    "auto_install": false,
+    "license_unknown_blocks_redistribution": true
+  },
+  "capabilities": [
+    {
+      "id": "ui-ux-pro-max",
+      "type": "skill",
+      "role": [
+        "ui-art-direction",
+        "design-system"
+      ],
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "status": "RESEARCHED",
+      "license_verified": false
+    },
+    {
+      "id": "taste",
+      "type": "skill",
+      "role": [
+        "ui-art-direction",
+        "visual-craft"
+      ],
+      "url": "https://github.com/Leonxlnx/taste-skill",
+      "status": "RESEARCHED",
+      "license_verified": false
+    },
+    {
+      "id": "impeccable",
+      "type": "skill",
+      "role": [
+        "visual-critique",
+        "responsive",
+        "motion"
+      ],
+      "url": "https://github.com/pbakaus/impeccable",
+      "status": "CANDIDATE",
+      "license_verified": false
+    },
+    {
+      "id": "ponytail",
+      "type": "skill",
+      "role": [
+        "code-review",
+        "simplification"
+      ],
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "status": "RESEARCHED",
+      "license_verified": false
+    },
+    {
+      "id": "graphify",
+      "type": "cli",
+      "role": [
+        "source-navigation"
+      ],
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "status": "CANDIDATE",
+      "license_verified": false
+    },
+    {
+      "id": "graphiti",
+      "type": "library",
+      "role": [
+        "experimental-memory"
+      ],
+      "url": "https://github.com/getzep/graphiti",
+      "status": "ON_HOLD",
+      "license_verified": false
+    },
+    {
+      "id": "context7",
+      "type": "mcp",
+      "role": [
+        "version-aware-api-docs"
+      ],
+      "url": "https://github.com/upstash/context7",
+      "status": "CANDIDATE",
+      "license_verified": false
+    },
+    {
+      "id": "playwright-mcp",
+      "type": "mcp",
+      "role": [
+        "browser-qa"
+      ],
+      "url": "https://github.com/microsoft/playwright-mcp",
+      "status": "CANDIDATE",
+      "license_verified": false
+    },
+    {
+      "id": "vitest",
+      "type": "framework",
+      "role": [
+        "unit-tests"
+      ],
+      "url": "https://github.com/vitest-dev/vitest",
+      "status": "CANDIDATE",
+      "license_verified": false
+    },
+    {
+      "id": "motion",
+      "type": "library",
+      "role": [
+        "animation",
+        "motion-design"
+      ],
+      "url": "https://motion.dev/",
+      "status": "CANDIDATE",
+      "license_verified": false
+    },
+    {
+      "id": "react-bits",
+      "type": "library",
+      "role": [
+        "interactive-components"
+      ],
+      "url": "https://github.com/DavidHDev/react-bits",
+      "status": "CANDIDATE",
+      "license_verified": false
+    }
+  ]
+}

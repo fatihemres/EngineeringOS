@@ -1,0 +1,19 @@
+{
+  "schema_version": "0.1",
+  "package_id": "engineeringos-foundation",
+  "package_status": "FOUNDATION_DRAFT_PENDING_CI_AND_INTEGRATION",
+  "architecture": "public-core-private-workspace",
+  "date": "2026-11-02",
+  "license": "Apache-2.0",
+  "license_scope": "original-engineeringos-public-core",
+  "license_decision_status": "PO_APPROVED",
+  "implementations": {
+    "read_only_doctor": "prototype",
+    "chatgpt_kit_export": "prototype",
+    "experience_validation": "schema_subset_and_public_fixture_gate",
+    "agent_runtime": "not_implemented",
+    "github_sync": "not_implemented",
+    "skill_installation": "not_implemented"
+  },
+  "source_authority": "project-owner-and-project-repo-first"
+}
