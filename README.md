@@ -1,4 +1,4 @@
-# EngineeringOS — Foundation v0.1 (DRAFT / PRE-COMMIT)
+# EngineeringOS — Foundation v0.1 (DRAFT / NOT MERGED)
 
 **Status:** The public repository at https://github.com/fatihemres/EngineeringOS contains the governance seed on main. Foundation v0.1 supplies draft architecture and a minimal standard-library bootstrap prototype, prepared for draft PR review. Foundation remains unmerged and unreleased.
 **Date:** 2026-11-02 · **Owner choices:** Public Core + Private Workspace; Apache License 2.0 for original EngineeringOS Public Core materials. Publication follows the scoped owner authorizations recorded in docs/DECISIONS.md. Integration and release require separate approval.
@@ -17,7 +17,9 @@ A portable, evolving engineering operating system for frontend/UX, backend, APIs
 
 ## What is designed but NOT implemented
 
-Runtime multi-agent orchestration, semantic/graph memory, CLI installers, GitHub issue/PR mutation, ChatGPT Project uploads/sync, skill/MCP provisioning, cross-project auto-sync, full JSON-Schema or license scanning, external contributors, **GitHub Actions executed for EngineeringOS**, native desktop QA. All require separate implementation and verification.
+Runtime multi-agent orchestration, semantic/graph memory, CLI installers, GitHub issue/PR mutation, ChatGPT Project uploads/sync, skill/MCP provisioning, cross-project auto-sync, full JSON-Schema or license scanning, external contributors, native desktop QA. All require separate implementation and verification.
+
+Hosted GitHub Actions validation passed on Windows and Ubuntu for Foundation Draft PR #1 at revision `07d57e411d8980dc8ba292483996bb6ded788c72`. The [historical run](https://github.com/fatihemres/EngineeringOS/actions/runs/41480277276) verifies that revision; each subsequent revision needs its own CI verification. Hosted CI does not authorize Foundation integration or release.
 
 ## Recommended reading order
 

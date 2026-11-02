@@ -10,7 +10,7 @@
 `HYPOTHESIS`, `AGENT_REPORTED`, `USER_REPORTED`, `SOURCE_REVIEWED`, `LOCAL_TEST_VERIFIED`, `CI_VERIFIED`, `HUMAN_NATIVE_ACCEPTED`, `PO_DECISION`. These are distinct, not a single numeric confidence. Record exactly what was tested and by whom. Conflicting information gets new dated correction/rebuttal and links; history is not rewritten.
 
 ## Required experience fields
-Schema version, stable ID, date, project, scope, problem, tools with versions, actor roles, attempts, evidence/limitations, lessons, privacy class, potential reuse and external source links. See `schemas/experience.schema.json` and `examples/synthetic-ui-review.json`.
+The current v0.1 required fields are `schema_version`, `id`, `date`, `project`, `task`, `status`, `provenance`, `actors`, `tools`, `evidence`, `lessons`, `privacy`. The [shipped schema](../schemas/experience.schema.json) is the authoritative machine-readable contract; see the [valid synthetic example](../examples/synthetic-ui-review.json). Conceptual or future ledger dimensions such as scope, problem and attempts are not independently accepted top-level v0.1 fields. The schema rejects unknown properties.
 
 ## Agent capability memory
 Track task category, outcome and tool versions, context limits, number of retries, independent reviewer, expected vs actual result, incident frequency and reproducibility. No model leaderboard based on unequal tasks; do not attribute joint-agent outcomes to one component without control.
