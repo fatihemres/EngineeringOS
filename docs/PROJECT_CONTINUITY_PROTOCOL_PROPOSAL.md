@@ -40,7 +40,7 @@ A handoff should give:
 - outstanding tests, next owner decision and safe next read-only step;
 - ChatGPT Source state `NOT_SYNCED` / `SYNC_PENDING` / `SYNC_VERIFIED` with actual version/hash if known.
 
-In a new chat, read the Project Instructions + latest handoff, then live source and actual code/CI. The old `EGOS - Main` transcript is historical context, not an execution authority.
+In a new chat, read the Project Instructions + latest handoff, then live source and actual code/CI. Earlier planning chat transcripts are historical context, not execution authority.
 
 ## Post-merge remote source-branch disposition — PO direction; deletion separately gated
 

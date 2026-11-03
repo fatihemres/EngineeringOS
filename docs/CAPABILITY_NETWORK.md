@@ -23,6 +23,7 @@ Project-specific authority and source-of-truth always override portable guidance
 | Node | Purpose | Identity / evidence expectation |
 | --- | --- | --- |
 | `Capability` | Skill, library, tool, MCP, model, harness, framework or reference | Stable ID, exact vendor URL and source/ref, version, license state, lifecycle, permissions, compatibility |
+| `Actor` | A concrete human principal or actual model/harness session taking a Role; not the same as a tool or skill | Actor/session identity, affiliated harness/model if relevant, declared `independent_context` with execution receipt and authority boundary |
 | `Role` | Engineering responsibility, independent of particular vendor | Role ID, required outputs and review expectations |
 | `Workflow` | Bounded sequence or network of tasks | Workflow ID, required inputs, decision gates, termination condition |
 | `Task/Run` | One scoped invocation and its actual attempts | Source/fixture SHA, real actor/harness, prompt or task ref, outcome, limitations |
@@ -37,7 +38,7 @@ Project-specific authority and source-of-truth always override portable guidance
 | `ALTERNATIVE_TO` | Comparable approaches compete for an output | Taste <-> UI/UX Pro Max | Compare on comparable, independently controlled inputs |
 | `COMPLEMENTS` | Distinct roles strengthen one workflow | Motion + component implementation | Verify version, license, integration and UX |
 | `PRODUCES_FOR` | Emits artifact to another role | Design proposal -> prototype implementer | Explicit artifact contract and source provenance |
-| `CONSUMES_CONTEXT_FROM` | Reads bounded source/context | API reviewer <- Context7 docs | Documentation is untrusted and version-specific |
+| `CONSUMES_CONTEXT_FROM` | Reads bounded source/context | API reviewer -> Context7 docs (consumes bounded context) | Documentation is untrusted and version-specific |
 | `CRITIQUES` | Challenges earlier output | Impeccable -> UI prototype | Independent context and actual execution need receipts |
 | `VALIDATES` | Tests behavior or acceptance | Playwright -> browser interaction | Browser tests != native Windows acceptance |
 | `REVIEWS_CODE_AFTER` | Optional final quality/simplicity review | Ponytail -> stabilized implementation | Do not regress visual craft, accessibility, state or extensibility |
@@ -50,23 +51,23 @@ These relations are an **information model**, not shipped registry JSON keys or 
 
 ## 3. Initial capability-role-connection table
 
-The 11 identifiers below match the current candidate registry at the pinned `main` checkpoint. Associations describe **possible relationships** and are not installation/adoption claims. External products and source metadata need exact-version and license/security verification before use.
+The 11 display names below each show their exact kebab-case `id` from the candidate registry at the pinned `main` checkpoint. Associations describe **possible relationships** and are not installation/adoption claims. External products and source metadata need exact-version and license/security verification before use.
 
 | Candidate | Possible role | Receives / upstream | Produces / downstream | Current registry status |
 | --- | --- | --- | --- | --- |
-| UI/UX Pro Max | Art direction, design system | PO aesthetic brief, UX constraints | Alternative design proposal for synthesis | `RESEARCHED` |
-| Taste | Visual craft and art direction | Same brief / reference constraints | Distinct design proposal for comparison | `RESEARCHED` |
-| Impeccable | Visual/responsive critique | Implemented prototype, screenshot, behavior evidence | Findings and targeted design-feedback for implementer/reviewer | `CANDIDATE` |
-| Motion | Animation and motion design | PO-selected concept, accessibility/reduced-motion targets | Candidate motion implementation -> QA | `CANDIDATE` |
-| React Bits | Interactive component patterns | Selected design and target framework | Candidate component integration -> QA | `CANDIDATE` |
-| Ponytail | Code review / simplification | Stabilized code and intended UX contract | Suggested final refactor -> regression tests and PO review | `RESEARCHED` |
-| Graphify | Source navigation | Version-pinned project source | Code relationships/context -> architect, implementer, reviewer | `CANDIDATE` |
-| Context7 | Version-aware external documentation | Dependency/version question | Source-attributed documentation -> implementation/review | `CANDIDATE` |
-| Playwright MCP | Browser QA | Built frontend + defined user journey | Browser observations/screenshots -> QA/acceptance ledger | `CANDIDATE` |
-| Vitest | JS/TS unit test runner | Implemented code + fixture | Test report -> quality gates/ledger | `CANDIDATE` |
-| Graphiti | Experimental temporal memory candidate | Only a future sanitized, controlled ledger-derived feed | Optional derived time-relationship index | `ON_HOLD` |
+| UI/UX Pro Max (`ui-ux-pro-max`) | Art direction, design system | PO aesthetic brief, UX constraints | Alternative design proposal for synthesis | `RESEARCHED` |
+| Taste (`taste`) | Visual craft and art direction | Same brief / reference constraints | Distinct design proposal for comparison | `RESEARCHED` |
+| Impeccable (`impeccable`) | Visual/responsive critique | Implemented prototype, screenshot, behavior evidence | Findings and targeted design-feedback for implementer/reviewer | `CANDIDATE` |
+| Motion (`motion`) | Animation and motion design | PO-selected concept, accessibility/reduced-motion targets | Candidate motion implementation -> QA | `CANDIDATE` |
+| React Bits (`react-bits`) | Interactive component patterns | Selected design and target framework | Candidate component integration -> QA | `CANDIDATE` |
+| Ponytail (`ponytail`) | Code review / simplification | Stabilized code and intended UX contract | Suggested final refactor -> regression tests and PO review | `RESEARCHED` |
+| Graphify (`graphify`) | Source navigation | Version-pinned project source | Code relationships/context -> architect, implementer, reviewer | `CANDIDATE` |
+| Context7 (`context7`) | Version-aware external documentation | Dependency/version question | Source-attributed documentation -> implementation/review | `CANDIDATE` |
+| Playwright MCP (`playwright-mcp`) | Browser QA | Built frontend + defined user journey | Browser observations/screenshots -> QA/acceptance ledger | `CANDIDATE` |
+| Vitest (`vitest`) | JS/TS unit test runner | Implemented code + fixture | Test report -> quality gates/ledger | `CANDIDATE` |
+| Graphiti (`graphiti`) | Experimental temporal memory candidate | Only a future sanitized, controlled ledger-derived feed | Optional derived time-relationship index | `ON_HOLD` |
 
-Figma, Codex, Antigravity, additional reviewers, CodeQL and other research candidates may later be modeled as capabilities/actors when sourced and assessed; they are not among these 11 registry records. `Role` is not synonymous with a separate live model or agent.
+Figma, CodeQL, Codex, Antigravity and other external tools/harnesses may be researched as **Capability** candidates when sourced and assessed; they are not among these 11 current registry entries. A concrete human reviewer or executed isolated model/harness session is instead an **Actor**, with real execution/independence evidence and authority context. A `Role` is a responsibility, not proof of a separate running model or agent.
 
 ## 4. Example linked workflow — UI/UX craft
 
@@ -78,7 +79,7 @@ Figma, Codex, Antigravity, additional reviewers, CodeQL and other research candi
 | 4. Implementation | Selected direction + stack | Implementer + Motion/React Bits when applicable | Real prototype and build artifact | No installation without permission; preserve reduced motion |
 | 5. Design critique | Screenshots + interaction journeys | Impeccable + independent reviewer if available | Findings and reproduction notes | Source scan != browser/native test |
 | 6. Technical QA | Concrete UI build + test plan | Playwright + Vitest where compatible; platform QA | Keyboard/responsive/state/performance evidence | Comparable viewports; native acceptance separate |
-| 7. Code-quality pass | Stable design and tested code | Ponytail review candidate | Optional minimal refactor + regression diff | Never simplify away motion, accessibility or deliberate future architecture |
+| 7. Code-quality pass | Stable design and tested code | Ponytail review candidate | Optional minimal refactor + regression diff + re-verified unit/browser/accessibility QA as applicable | Never simplify away motion, accessibility or deliberate future architecture; recheck altered behavior before experience capture |
 | 8. Experience capture | Attempts, outcomes, dissent | Project-private ledger | Attributed successes, failures, chosen reasons | No public raw transcript or personal data |
 
 ## 5. Example linked workflow — API, domain and database
