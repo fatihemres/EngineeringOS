@@ -6,6 +6,11 @@
 3. **Cross-project lessons**: carefully generalized and sanitized patterns/anti-patterns with evidence and applicability boundaries. Reviewed before promotion to public core.
 4. **Derived indexes**: search, full text, local embeddings or temporal graphs. Rebuildable; not authority. Graphiti/Graphify are optional candidates, not prerequisites.
 
+## Proposed experience feedback
+
+[Capability Network](CAPABILITY_NETWORK.md), [candidate intake](CAPABILITY_INTAKE_PROTOCOL_PROPOSAL.md) and [continuity](PROJECT_CONTINUITY_PROTOCOL_PROPOSAL.md) describe a future chain from private task evidence to a reviewed, redacted, license-checked and synthetic public contribution candidate. The shipped `schemas/experience.schema.json` remains the authoritative v0.1 schema. No new private store, automatic sync or graph index is implied.
+
+
 ## Evidence, decision and status semantics
 `HYPOTHESIS`, `AGENT_REPORTED`, `USER_REPORTED`, `SOURCE_REVIEWED`, `LOCAL_TEST_VERIFIED`, `CI_VERIFIED`, `HUMAN_NATIVE_ACCEPTED`, `PO_DECISION`. These are distinct, not a single numeric confidence. Record exactly what was tested and by whom. Conflicting information gets new dated correction/rebuttal and links; history is not rewritten.
 

@@ -1,5 +1,13 @@
 # Foundation status · 2026-11-02
 
+## Latest verified GitHub checkpoint · 2026-11-03 (additive update)
+
+Foundation v0.1 remains **MERGED / CI_VERIFIED / UNRELEASED**; formal E0 closure and any release remain separate PO decisions. The latest verified protected `main` on this date is [`381033b3a811b639f540b5a4119303367d6864b2`](https://github.com/fatihemres/EngineeringOS/commit/381033b3a811b639f540b5a4119303367d6864b2), tree `bd998b6d610885512ddccedf993bddd1fc972168`, produced by [PR #2](https://github.com/fatihemres/EngineeringOS/pull/2) merging the five-document checkpoint on **2026-11-02 18:49:43 UTC** (first parent `f1860b21fc580afc080ba1583635ee514fbd989c`; second parent `42d303c17ee1901f9a297371c88f798befc9a8ba`). [PR #2 CI #41501139925](https://github.com/fatihemres/EngineeringOS/actions/runs/41501139925) and its **post-merge main-push CI [#41504234468](https://github.com/fatihemres/EngineeringOS/actions/runs/41504234468)** passed required Windows and Ubuntu checks. The source branch `docs/foundation-checkpoint-20261102` remains preserved.
+
+[Issue #3](https://github.com/fatihemres/EngineeringOS/issues/3) / [Draft PR #6](https://github.com/fatihemres/EngineeringOS/pull/6) concern **proposed docs-only Capability Network, continuity and intake contracts**, not implemented E1–E7 functionality or an approved merge. Independent Argon High reported `PASS WITH FINDINGS` (one MEDIUM, three LOW) on the initial PR #6 head; the PO authorized only scoped follow-up documentation corrections, not Ready transition, merge, cleanup or release. Re-verify the exact current PR revision and its new CI before any future gate.
+
+**Historical attribution:** The section headed `Current verified integration checkpoint · 2026-11-02` below was the state at that earlier checkpoint, when the PR #2 documentation synchronization was still pending. Its present-tense pending statements are **superseded by this dated update**, not current open work. The old text is intentionally preserved as historical evidence.
+
 ## Current verified integration checkpoint · 2026-11-02
 
 Foundation v0.1 was merged through [PR #1](https://github.com/fatihemres/EngineeringOS/pull/1) on 2026-11-02 at 21:10:50 TRT (18:10:50 UTC). The verified main checkpoint is [f1860b21fc580afc080ba1583635ee514fbd989c](https://github.com/fatihemres/EngineeringOS/commit/f1860b21fc580afc080ba1583635ee514fbd989c), with tree `c3857feb61a92c04a10e7716538c908e8a37388e` and 44 regular files. Its first parent is the governance seed `2b18708c30da03e59578cc4f7f4ebe8f269aec4d`; its second is reviewed feature HEAD `7adf4576113d98ca73b876492f5692df120c812c`. The Foundation feature branch remains preserved at that HEAD.

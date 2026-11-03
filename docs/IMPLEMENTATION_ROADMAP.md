@@ -11,4 +11,7 @@
 | E6 Distribution | Multi-project adapters, versioned updates and rollback | Two different stack pilots; reproducible project setup and update |
 | E7 UI/observability (optional) | Inspectable workflows, agent outcomes, tool changes | Useful human audit trail; no hidden telemetry |
 
+**Product overlay (proposal):** [Capability Network](CAPABILITY_NETWORK.md) and [Roadmap vNext](PRODUCT_ROADMAP_VNEXT_PROPOSAL.md) connect E0–E7 via discovery → complementary role selection → collaboration → verification → private experience → reviewed public contribution. This is not a newly approved milestone, software runtime or implementation authorization.
+
+
 All phases must cross separate PO permission checkpoints for implementation, integrations and public release. E0 draft construction in this conversation is not itself such an approval for hosted repo changes.

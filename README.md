@@ -7,6 +7,11 @@
 
 A portable, evolving engineering operating system for frontend/UX, backend, APIs, data modelling, databases, architecture, testing, security, operations and product delivery. Multiple expert viewpoints can propose, criticize and converge; execution evidence and failures feed a reusable experience ledger. The platform can onboard existing or new projects and create a ChatGPT Project instructions/source kit. Project-specific authority and real verification always outrank generic recommendations.
 
+## Capability Network and continuity proposals
+
+EngineeringOS is intended to connect complementary capability candidates, specialist roles, independent critiques, evidence and private-first project lessons. See [Capability Network](docs/CAPABILITY_NETWORK.md), [Roadmap vNext](docs/PRODUCT_ROADMAP_VNEXT_PROPOSAL.md), [P0 discovery](docs/P0_CAPABILITY_CONTRACT_DISCOVERY.md), [continuity](docs/PROJECT_CONTINUITY_PROTOCOL_PROPOSAL.md) and [candidate intake](docs/CAPABILITY_INTAKE_PROTOCOL_PROPOSAL.md). Tracked by Issues [#3](https://github.com/fatihemres/EngineeringOS/issues/3), [#4](https://github.com/fatihemres/EngineeringOS/issues/4) and [#5](https://github.com/fatihemres/EngineeringOS/issues/5). These are **design/research proposals**, not running agent orchestration, automatic project sync, installed tool adoption or a milestone approval.
+
+
 ## What works in Foundation
 
 - `python tools/engineeringos.py doctor --profile profiles/examples/desktop.profile.json`: **read-only** PATH discovery, no installations, network, git or version execution.

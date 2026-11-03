@@ -31,6 +31,11 @@ PUBLIC CONTRIBUTION PR (not automatic merge)
 6. **Contribution gateway**: candidate extraction, privacy classification, rights/provenance, dedup, draft issue/PR preparation and CI; contributor cannot self-approve.
 7. **Adapters**: ChatGPT Project, Codex, Antigravity, Claude and other harnesses. Each adapter declares supported features and omissions rather than pretending all hosts can install tools or sync automatically.
 
+## Proposed Capability Network
+
+The proposed `Capability → Role → Workflow → Evidence → Project-private Experience → Reviewed public contribution` loop links tasks through typed, provenance-aware relationships. See [network contract](docs/CAPABILITY_NETWORK.md) and [continuity proposal](docs/PROJECT_CONTINUITY_PROTOCOL_PROPOSAL.md). No runtime graph memory, orchestration engine, automatic installation or project-to-core sync is implemented in v0.1.
+
+
 ## Authority order for a project
 
 1. Explicit current project-owner decisions, security restrictions and granted permissions.
