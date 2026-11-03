@@ -1,5 +1,15 @@
 # Current decisions and remaining gates · 2026-11-02
 
+## P0-D8 five-scenario Gate A design checkpoint · 2026-11-03 (additive)
+
+**PO-approved design direction, not implementation:** The PO accepted a **five-scenario P0-D8 study structure** with **U1 creative visual direction, U2 enterprise dashboard, U3 mobile-first bilingual UX, U4 accessibility/motion, and D1 API/database reliability**, organized into separate Gate A (design), Gate B (validator proof), Gate C (controlled actual agent pilot) and Gate D (comparative evaluation). This extends the [P0-D1–D7 architecture-direction decision](DECISIONS.md) without silently adopting full handoff schema fields or opening any E1–E7 milestone.
+
+**Detailed specification remains PROPOSED:** [P0 Synthetic Pilot Specification](P0_SYNTHETIC_PILOT_SPEC_PROPOSAL.md) provides five fictional briefs/handoff plans, ten deliberately fictional negative cases, cross-cutting T02–T22 design references, an A/B/C comparison method, scorecard and review boundaries. **The PO has not yet approved exact fixtures, score thresholds, receipt/enum/typed-ref serialization, real actors, installations, network access, budget, any pilot execution or implementation.** All examples are `NOT_RUN` / `NOT_VERIFIED`; no quality gain is claimed.
+
+**Latest verified baseline before this docs-only candidate:** [PR #8](https://github.com/fatihemres/EngineeringOS/pull/8) squash-MERGED at protected `main` `b6819a80a9a041b301bc4164ec73f848f0efca9a`; [main-push run #41649917173](https://github.com/fatihemres/EngineeringOS/actions/runs/41649917173) Windows and Ubuntu `SUCCESS`. [Issue #4](https://github.com/fatihemres/EngineeringOS/issues/4) remains CLOSED for contract research; [Issue #5](https://github.com/fatihemres/EngineeringOS/issues/5) remains OPEN. Foundation v0.1 remains UNRELEASED.
+
+**Next separate gates:** independent current-diff review and PR-head required CI for this **two-file Draft PR**, then distinct PO approvals for Ready, integration and branch disposition. Pilot implementation, test execution, Issue mutation, registry/schema/CLI changes, private-data use, ChatGPT sync and release are **not authorized** by this documentation preparation. Older dated records remain historically intact.
+
 ## Latest decision checkpoint — 2026-11-03 (PO architecture direction; additive)
 
 **PO_DECISION: `EGO-P0-ARCH-DIRECTION-001`**, covering **P0-D1–P0-D7 as bounded architecture directions only** (see [decision register](DECISIONS.md) and [P0 handoff proposal](P0_HANDOFF_CONTRACT_PROPOSAL.md)): separate versioned handoff contract; manual artifact-ref coordination first; distinct pseudonymous Actor/session evidence for independent review; typed refs before graph nodes; separate state axes without v0.1 enum mutation; owner-scoped immutable expiring permission receipts; private-first records and human-approved sanitized public promotion.
