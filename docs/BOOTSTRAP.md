@@ -16,6 +16,11 @@ Goal: make a new/existing project *ready to work* while preserving its local aut
 - `export-chatgpt` dry-runs by default; `--write` writes a local output package only, refuses different existing files and does not upload to ChatGPT.
 - Actual host environment checks, git status/CI, desktop interactions and connector availability must be verified independently.
 
+## Capability-aware readiness (proposed)
+
+A future bootstrap can select *only* project-relevant, source-pinned candidates by role and the [Capability Network](CAPABILITY_NETWORK.md). See [intake protocol](CAPABILITY_INTAKE_PROTOCOL_PROPOSAL.md). PATH discovery is not a verified installation, and kit export is not real ChatGPT Project Sources import. Installation, network, secrets, hooks and project settings remain independently gated.
+
+
 ## Local prototype commands
 
 ```bash

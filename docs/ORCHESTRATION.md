@@ -6,6 +6,11 @@
 - **Skill** = instructions, **tool/MCP** = accessible interface, **runtime** = executes orchestration. Do not treat any as interchangeable.
 - **Evidence broker** = canonical source pointers and read-only project facts; agent assertions are untrusted until checked.
 
+## Proposed capability handoff relationships
+
+[Capability Network](CAPABILITY_NETWORK.md) specifies alternative/complement, input-output, critique, validation and evidence-recording relationships. Each future handoff needs real actor identity, source refs, trust boundary, artifact contract, permission and test receipt. Roles are not independent AI sessions merely because multiple skills were listed. [P0 discovery](P0_CAPABILITY_CONTRACT_DISCOVERY.md) is a design proposal, not runtime implementation.
+
+
 ## Workflow
 1. Owner requirement and exact scope, baseline refs, data policy.
 2. Coordinator identifies specialist tasks. For genuine independence, separate contexts or agents and avoid leaking solutions before initial proposals.

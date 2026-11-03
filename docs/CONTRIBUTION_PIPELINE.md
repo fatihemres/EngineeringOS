@@ -10,6 +10,11 @@ EngineeringOS should accept outside PRs without granting contributor-provided co
 6. **Maintainer merge:** branch rules/required checks, release notes, decision/registry update. Public core version changes are explicit.
 7. **Consumer update:** project pins, checked upgrade proposal and roll-back. No automatic downstream modification.
 
+## Proposed post-merge branch disposition
+
+The [continuity protocol](PROJECT_CONTINUITY_PROTOCOL_PROPOSAL.md) incorporates the PO's preference to remove **eligible remote completed PR source branches**, after a separately approved merge, exact main verification and successful required post-merge CI; specific deletion permission and safety checks remain required. Existing historical branches and local worktrees remain untouched. No global auto-delete setting is approved by this proposal.
+
+
 ## Governance to decide before public launch
 Apache-2.0 is approved for original Public Core material. Open decisions include the contributor agreement/DCO, maintainers/CODEOWNERS, merge strategy, additional branch rules and required checks, issue labels, release cadence and compatibility policy. The main-governance ruleset is active and Private Vulnerability Reporting is enabled. Do not invent a unanimous maintainer agreement.
 
