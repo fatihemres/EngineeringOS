@@ -1,5 +1,15 @@
 # Current decisions and remaining gates · 2026-11-02
 
+## Latest decision checkpoint — 2026-11-03 (PO architecture direction; additive)
+
+**PO_DECISION: `EGO-P0-ARCH-DIRECTION-001`**, covering **P0-D1–P0-D7 as bounded architecture directions only** (see [decision register](DECISIONS.md) and [P0 handoff proposal](P0_HANDOFF_CONTRACT_PROPOSAL.md)): separate versioned handoff contract; manual artifact-ref coordination first; distinct pseudonymous Actor/session evidence for independent review; typed refs before graph nodes; separate state axes without v0.1 enum mutation; owner-scoped immutable expiring permission receipts; private-first records and human-approved sanitized public promotion.
+
+**Current evidence:** [PR #7](https://github.com/fatihemres/EngineeringOS/pull/7) was squash-MERGED at `617c0a78419ff40068b5973af2449684faaec073` (tree `ebd40312ab7920b0c503c5282da9360516f303b1`); exact main-push [CI #41641576872](https://github.com/fatihemres/EngineeringOS/actions/runs/41641576872) Windows/Ubuntu **SUCCESS**. [Issue #4](https://github.com/fatihemres/EngineeringOS/issues/4) is **CLOSED / COMPLETED for contract discovery**, not for implementation. [Issue #5](https://github.com/fatihemres/EngineeringOS/issues/5) is **OPEN**. Foundation remains **UNRELEASED**.
+
+**Actual next PO gates:** P0-D8 synthetic pilot scenario selection, measurable scorecard and permitted execution/resource boundary; P0-D3/D4/D5/D6 exact identity/reference/enum/receipt encodings; separately authorized schema/CLI/fixture design and implementation, tests and review; any E1–E7 milestone authorization; and independent PR lifecycle/integration/cleanup/release decisions. The PO is interested in **expanding UI/UX scenario diversity**, but no additional pilot is approved or run. A broader comparative pilot might separately examine responsive/accessibility/motion and aesthetic alternatives, alongside API/database, only after explicit scope design and approval.
+
+**Historical interpretation:** Older Draft-PR #6, Issue #4-open and pre-merge/pending descriptions below are dated snapshots superseded by this later live checkpoint for those exact events. Preserve them verbatim. No new application code, install, pilot, repo settings change, release or ChatGPT Project Source synchronization is implied.
+
 Foundation v0.1 is merged through [PR #1](https://github.com/fatihemres/EngineeringOS/pull/1) at `f1860b21fc580afc080ba1583635ee514fbd989c`, with tree `c3857feb61a92c04a10e7716538c908e8a37388e`. The final independent Argon differential review reported PASS; the Ready transition, Governance Stage B strict App-bound Windows/Ubuntu checks and separately authorized merge-commit integration are complete. [Main-push CI](https://github.com/fatihemres/EngineeringOS/actions/runs/41498102378) passed on the exact integration commit.
 
 ## Live checkpoint update · 2026-11-03
