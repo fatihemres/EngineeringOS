@@ -1,10 +1,10 @@
 # EngineeringOS — P0 Wire Contract Design Journal
 
-> **PUBLIC-CORE SANITIZED DOCUMENTATION CANDIDATE — NOT PUBLISHED**  
+> **PUBLIC-CORE DESIGN CANDIDATE — COMMITTED ON DRAFT PR #10 BRANCH; NOT MERGED TO `main`; NOT AN APPROVED WIRE CONTRACT**  
 > Prepared: 2026-11-04 (Europe/Istanbul)  
 > Proposed repository path: `docs/P0_WIRE_CONTRACT_DESIGN_JOURNAL.md`  
 > Status: `PROPOSED / READ-ONLY RESEARCH & DRAFT / NO IMPLEMENTATION`  
-> This local downloadable artifact is **not** a GitHub commit, PR, project source sync, or owner approval of a final wire schema.
+> Initial Draft PR HEAD: `6d3aa54b4ecb510aee50e59390e2942f26e4262d`. Earlier sections preserve dated pre-PR snapshots; their prior-tense publication statements are historical, not today's live status. This document does not certify final wire schema acceptance or ChatGPT Project source synchronization.
 
 ## 1. Purpose and governing rules
 
@@ -212,3 +212,44 @@ A **self-contained read-only targeted review packet** was prepared on 2026-11-04
 **Scope exclusions:** No schema/CLI/fixture/registry changes, local private-data export, agent or pilot execution, environment setup, Issue mutation, Ready-for-Review transition, merge, release, settings changes, branch deletion or cleanup. A successful GitHub push or CI does not grant PO integration approval.
 
 **Evidence boundary:** This entry records the scoped approval **before publication actions**. It does not itself attest that a branch, commit, push, PR, review, or CI result occurred; use live GitHub metadata and exact SHAs for those claims. The v0.3 contract remains **PROPOSED / NOT INDEPENDENTLY REVIEWED / NOT IMPLEMENTED**. Reviewer findings and proposed dispositions remain `AGENT_REPORTED` or assistant recommendations unless separately decided by the PO.
+
+## 11. Additive PR #10 initial-HEAD review and correction-plan checkpoint — 2026-11-04 · EGO-P0-WIRE-JOURNAL-004
+
+**Entry type:** Dated design-review/disposition checkpoint, **not a new architecture decision ID, release or implementation authorization**. This section is appended after earlier §§1–10; the historical material and its timestamps are retained. The original §2 zero-open-PR observation and §9 “NOT PUBLISHED” represent **pre-PR preparation checkpoints**, not the current GitHub state. The top banner was updated to report the current candidate's Draft-branch publication truthfully.
+
+### 11.1 PO authority versus independently verifiable provenance
+
+`EGO-P0-WIRE-JOURNAL-003` is a **journal entry ID**, not an independently minted architectural decision in `docs/DECISIONS.md`. It records the PO's bounded **documentation publication workflow** authorization reported in the EngineeringOS project conversation on 2026-11-04. A real PO's explicitly scoped approval is a `PO_DECISION` regardless of which document later records it; file placement does not generate or eliminate owner authority. However the precise underlying chat authorization is **not independently authenticated by public GitHub evidence**. A public reader should treat that authorization's existence and exact scope as **chat-sourced provenance**, not as a verified GitHub-native decision receipt. It did not approve this exact v0.3 wire serialization, schema, validator, execution or integration. Reviewer recommendations are still `AGENT_REPORTED` or proposals, not new owner decisions.
+
+### 11.2 Live original-HEAD source observations (before this offline correction)
+
+- Protected `main`: `f7f693650b205e6d3f19ac01f51169354e3fd40b`; tree `cbfd52021c208ef80214a4f2634ab356f6de5e86`.
+- Draft PR [#10](https://github.com/fatihemres/EngineeringOS/pull/10): branch `docs/p0-wire-v03-journal-20261104`, initial HEAD `6d3aa54b4ecb510aee50e59390e2942f26e4262d`, tree `58ff649769ae56aad805de7700c874aaf008cf31`, only two Markdown additions. The head's parent is the protected main SHA above; PR is **not merged**.
+- Original-head GitHub Actions [run `41812134081`](https://github.com/fatihemres/EngineeringOS/actions/runs/41812134081): Windows and Ubuntu required checks **SUCCESS**. The workflow runs Foundation tests, public JSON/provenance checks, **not** Markdown wire-contract semantic validation. That CI is for **the original head only**.
+- No GitHub-native PR review approval or review comment was found at this checkpoint. The review below was supplied by the user in conversation.
+
+### 11.3 External review and finding-count reconciliation
+
+The user-supplied Claude Opus High review of the **initial PR #10 HEAD** is `AGENT_REPORTED PASS WITH FINDINGS`; it is not a GitHub `Approve`, native acceptance, CI verification of this contract, or reviewer verification of the present correction. The agent reported that earlier HIGH findings C-01 and C-02 had been addressed at the **design** level only, with residual C-01 concerns and no runtime test.
+
+The report's headline claims **3 MEDIUM + 11 LOW**, but its N-01–N-18 table actually labels **6 MEDIUM + 12 LOW rows**. N-06 is an umbrella pointing to N-07/N-08, giving **5 individually reasoned MEDIUM + 12 LOW entries**, not 17 newly introduced independent defects: some are carryovers from v0.2. This reconciliation does not elevate the report to an independently executed test.
+
+### 11.4 Proposed corrections in the *same* v0.3 design
+
+- **N-01:** Retain real PO authority but separate chat-sourced evidence, journal entry ID and canonical published decision ledger; no retrospective approval of exact fields.
+- **N-02:** Define P2 accepted-but-not-authorized and P3 completed-probe/requirement-FAIL positive controls, alongside the complete fictional P1 JSON. No executed P2/P3 fixtures are claimed.
+- **N-03:** Clarify read-only attempt tracking versus scoped authorization; no implicit blanket permission. The canonical no-execution-without-authorization rule remains in force pending Gate B encoding.
+- **N-04/N-05:** Prevent unsupported byte-integrity claims and silent replay of an unbound permission receipt. Keep digest-limit representation, repeat-use policy and the actual trust mechanisms open.
+- **N-07/N-08:** Use canonical `evidence[].reference` and scope-level `limitations` in P1 while marking additional v0.3 fields as proposed.
+- **N-09/N-10:** Correct current publication banners and label earlier checkpoints as historical, without rewriting past observations.
+- **N-13/N-14/N-16:** Preserve supersession forks/dissent; define minimum private-to-public downgrade rejection without inventing a total enum order; describe W01–W15 as IDs preserved, wording refined.
+- **N-17/N-18:** Keep optional boundary-check receipt as a future decision; add design-only W31 for private-content leakage with a clean positive control. Add missing structural negatives to the future test backlog.
+- **Additional risk checks:** Normatively distinguish a directly authenticated owner action from agent-self-issued claims (W18), and block evidence promotion when `SUCCEEDED` lacks independently attributable completion evidence. No fabricated receipt is introduced for unknown interrupted attempts.
+
+### 11.5 Limits and next gates
+
+Earlier unshared local report/packet/source-copy SHA-256 values in §§4/9 are **UNVERIFIABLE_LOCAL from public GitHub alone**. GitHub blob and tree identities of the published original PR head are independently obtainable; old local hashes must never be represented as newly calculated digests of edited documents. This new checkpoint records the supplied review and a correction proposal, **not** successful runtime validation.
+
+**Gate B open:** true read-only owner grant/standing-policy representation and canonical invariant-5 reconciliation; actual receipt task/run/use binding and replay ledger if warranted; optional `digest_limit`; exact typed-ref and materialized fixture grammar; classification/rights policy; receipt requirements for independently verified `SUCCEEDED`; fork-selection authority; `attempted` tri-state under unknown invocation; unverified-review independence encoding; scoped oracle schema; full structural negatives; authorization-check audit receipt; clock/revocation validation; migrations and validator approach. Gate C/D agent pilots remain **NOT STARTED**.
+
+**Publication and review boundary:** These corrections are an **offline, uncommitted draft** until the PO separately authorizes a commit and push to this Draft PR branch. A changed head will require a new required Windows/Ubuntu PR CI run and an exact delta review. No Ready transition, merge, Issue mutation, schema/CLI or registry changes, external installations, release, branch deletion, local worktree cleanup or ChatGPT Project source synchronization is authorized here. The old CI and Claude report do **not** validate revised bytes.

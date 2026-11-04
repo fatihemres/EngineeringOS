@@ -4,7 +4,7 @@
 > Prepared: 2026-11-04 (Europe/Istanbul)  
 > Review baseline: protected `main` `f7f693650b205e6d3f19ac01f51169354e3fd40b`; tree `cbfd52021c208ef80214a4f2634ab356f6de5e86`  
 > Origin: canonical P0 contract; design-only wire v0.1/v0.2; Gemini Flash v0.1 (`AGENT_REPORTED`, 3 MEDIUM + 2 LOW); Claude Opus High v0.2 (`AGENT_REPORTED`, 2 HIGH + 10 MEDIUM + 7 LOW).  
-> **This v0.3 has NOT been independently reviewed, implemented, validated by the Foundation CLI, accepted as an exact wire encoding, or committed to GitHub.**
+> **Draft PR #10 publication status:** This v0.3 document was committed only on the Draft PR documentation branch at initial HEAD `6d3aa54b4ecb510aee50e59390e2942f26e4262d`, not merged into protected `main`, accepted as an exact machine contract, implemented, or validated by the Foundation CLI. A user-supplied Claude Opus High review of that initial HEAD is `AGENT_REPORTED PASS WITH FINDINGS` (not a GitHub review or approval); the present correction candidate has not been independently re-reviewed.
 
 ## 1. Authority, purpose, and non-goals
 
@@ -21,6 +21,8 @@ Source hierarchy and privacy boundaries remain governed by canonical repository 
 Conceptual record families: `HANDOFF`, `ACTOR_EXECUTION_RECEIPT`, `INDEPENDENCE_ASSESSMENT`, `ARTIFACT_DESCRIPTOR`, `PERMISSION_RECEIPT`, `PERMISSION_REVOCATION`, `VERIFICATION_RECEIPT`. These are **not** seven mandatory persisted files, graph node kinds, implemented APIs or adopted registry enums.
 
 **Snapshot rule (C-02):** One `HANDOFF` is an immutable point-in-time **assertion**, including its displayed lifecycle and execution state. A later observation/transition creates a **different `handoff_id`** and a `supersedes_ref` pointing to the prior record of the same kind; it does not edit the earlier record. A new execution attempt, when separately authorized, may use `retry_of` to reference the former attempted handoff. Do not infer from the mere presence of `retry_of` that a retry is safe; reconcile unknown outcomes first. New records must carry their own attribution, timestamps and provenance; the exact state-transition graph is still open. Duplicate IDs with conflicting bytes are invalid.
+
+**Fork and authority boundary (proposed):** If multiple records supersede one predecessor, preserve every fork, dissent reference and attributable provenance. No branch silently becomes the canonical current state. Who may authorize supersession and how a canonical current record is reconciled are open Gate B choices; a new record never retroactively rewrites evidence or creates a new permission grant.
 
 The four canonical optional handoff envelope fields remain available: `failure_details`, `retry_of`, `supersedes_ref`, `review_notes`. The latter two text-bearing fields are untrusted data, not executable instructions. Supersession preserves original dissent and evidence references.
 
@@ -71,6 +73,8 @@ Candidate typed external identity for actual artifacts: `egos-ref:v1:<kind>:<opa
 
 **Output descriptor** candidate: `{ artifact_ref, content_sha256, classification, produced_by_run_ref }` with the same conditional digest semantics. An actually produced byte artifact must have a computed, checked digest before claiming byte-level integrity; a PR, CI run or external DB state reference is not necessarily a byte artifact and may have `content_sha256:null` with an accountable evidence receipt. A null digest does **not** mean integrity was verified. `NOT_RUN` always requires `outputs:[]`.
 
+**Consumed/produced artifact evidence boundary (proposed):** `content_sha256:null` is an absence of byte-integrity evidence, not a passing hash check. For actual materialized byte content consumed or produced by an attempted run, an attributable source/producer receipt and a computed, verifiable digest are prerequisites to claiming verified **byte** integrity. If the bytes or digest are unavailable, the associated verification/evidence record must disclose that limitation; a consumer whose safety or correctness depends on byte integrity must fail closed. A non-byte reference can legitimately lack a byte digest, but must not claim byte-level proof. Whether a future optional `digest_limit` descriptor field or an external limitation/evidence reference expresses this is still an **unapproved Gate B wire-shape choice**.
+
 When a digest is present, its proposed normalization is `^[0-9a-f]{64}$`; the exact byte/canonical-content hashing policy remains open. No synthetic placeholder digest is acceptable as evidence. `relation.input_artifact_refs[]` / `relation.output_artifact_refs[]` must match the envelope input/output refs; missing outputs cannot be invented in a relation.
 
 ## 5. Role, Actor, identity and review provenance (C-11/C-19)
@@ -103,6 +107,8 @@ Preserve existing **candidate** axes (do not patch shipped registry/experience e
 
 `execution.attempted` means a **real task invocation has actually begun**, including read-only analysis/tests; it does **not** mean a side effect occurred. A separate authorization check is required before each permitted side effect. A proposal, planned synthetic invocation ID, permission check, or prevented pre-start operation does not imply `attempted=true`.
 
+**Read-only authorization boundary (proposed; canonical invariant 5 preserved):** Counting a real read-only invocation as `attempted=true` records what happened, not permission to start it. Neither `allowed_side_effects:[]` nor `permission_state=NOT_REQUESTED` constitutes a grant. This proposal authorizes no new read-only execution: the applicable project must have an authenticated, scope-specific owner grant or an independently verifiable PO-approved standing read-only policy covering the particular source, actor and data/network boundary. A record may truthfully describe a historically unauthorized attempt without laundering that attempt into approval. The representation of standing read-only grants and any modification to canonical P0 execution invariant 5 remain **open Gate B decisions**, not implicit permissions.
+
 **Proposed execution state table** (semantics, **not implemented validation**):
 
 | State | `attempted` | Receipt / outputs | Interpretation |
@@ -118,6 +124,8 @@ Preserve existing **candidate** axes (do not patch shipped registry/experience e
 
 A future schema may need a tri-state or detailed evidence field for `attempted` if even invocation is unknowable; this is deliberately **open**, not silently resolved by a Boolean. Do not conflate command exit status with task outcome. `failure_code` is expected for blocked/failed/partial cases when a genuine classification exists; absent evidence must not be filled with a fictional code.
 
+**Unattested outcome boundary (proposed):** `execution.state=SUCCEEDED` is an asserted task outcome, not by itself evidence of run provenance or requirement acceptance. If `run_receipt_ref` and equivalent independently attributable completion evidence are missing, the record must not be promoted merely by assertion to `LOCAL_TEST_VERIFIED`, `CI_VERIFIED`, certified independent review, or product/PO acceptance. Genuine interruptions may remain `OUTCOME_UNKNOWN` and lack a receipt without inventing one. Future minimum-receipt criteria and an unknown-invocation/tri-state `attempted` representation remain Gate B choices.
+
 **Handoff versus execution `BLOCKED`:** `handoff_state=BLOCKED` is a transfer/acceptance/protocol blocker; `execution.state=BLOCKED` is a pre-invocation execution prerequisite/policy blocker. They may differ. `ACCEPTED` requires a real identified receiving party, authentic acceptance receipt, policy-accessible/trusted inputs **at acceptance time**, and no *handoff-protocol* blocker. A later or separate execution denial does not retroactively erase a genuine handoff acceptance. `ACCEPTED` never grants permission to execute.
 
 ## 7. Owner permission, trusted verifier and revocation (C-03/C-04/C-17)
@@ -126,7 +134,11 @@ An agent-generated `authorization.owner`, `policy_ref`, `permission_state`, or c
 
 Candidate owner grant information includes `receipt_id`, `issuer_ref`, `grantee_ref`, `project_ref`, `target_ref`, applicable `source_sha`, `allowed_actions[]`, `resource_scopes[]`, egress destinations/classification constraints, `issued_at`, `not_before`, `expires_at`, `decision_ref`, `issuer_attestation_ref`; task/run binding, repeat-use limits and consumption records are **proposed refinements**, not silently adopted crypto or runtime systems. No universal `max_uses=1` applies to all grants. Side-effect and repeat-use policy depends on the owner's exact scoped authorization and task risk.
 
+**Replay default (proposed):** If task/run/use binding is not independently verifiable, the receipt cannot establish permission to repeat execution or side effects; silence never means reusable. A separately approved bounded repeat-use or standing read-only grant may be legitimate, but this paragraph does not impose universal `max_uses=1`, install a consumption ledger, or select an authentication scheme. The future encoding of task/run/use scope and replay accounting is a Gate B choice.
+
 At the **side-effect boundary**, the trusted verifier must independently check: issuer/owner authority, genuine attestation, actor/grantee match, exact project/target, whether envelope `allowed_side_effects[]` is a subset of the authentic receipt's permitted actions, resource targets, applicable source SHA, current time window, task/run binding and use/replay policy, permitted egress, actual candidate/license/vetting requirements, the authoritative latest revocation state, and the target project's higher-priority rules. Verify again before each distinct authorized side effect. If provenance, freshness or permission is unavailable, fail closed.
+
+**Direct-owner exception and W18 boundary (proposed):** An authenticated PO may act as both issuer and grantee only if a separate trusted owner policy actually permits that direct-owner action. An agent/hand-off envelope claiming to be both issuer and grantee never supplies its own trust anchor. The verifier applies the same source, target, action, expiry, revocation and egress constraints before each distinct side effect.
 
 Time invariants: applicable timestamps must parse as real UTC instants, with issuance/activation before expiry (precise skew and maximum lifetime remain open). `source_sha` must be pinned for repo side effects; SHA alone is not a protection against repeated operations within the permission window, and non-repository actions may need different immutable target IDs.
 
@@ -152,6 +164,8 @@ Default unknown data to `PROJECT_INTERNAL`. A typed ref, byte digest, trust labe
 
 No output may be silently downgraded to a less restrictive/public classification merely because its reference string or label changed. A deliberate **redacted, synthetic or declassified derivative** may acquire a different classification **only after** an attributable authorized transformation/promotion decision: source/license review, redaction, rights determination, synthetic reproducer when appropriate, human/PO review, and separately authorized PR/CI. The original stays private with unchanged provenance. Data classifications are policy categories, not necessarily a simple ordered integer scale; final promotion rule needs a classification/rights-aware policy and independently checked proof.
 
+**W10/W24 minimum rejection rule (proposed):** An unauthorised assertion that `PROJECT_INTERNAL`, `SENSITIVE` or `SECRET` became `PUBLIC_REUSABLE` solely by changing a string or label must be rejected. Other transfers and reclassifications require project-specific exposure and rights analysis, not an invented total order of enum values. A reviewed redacted/synthetic derivative receives its own identity and promotion receipt; the original retains its classification and evidence.
+
 `UNTRUSTED`, `PINNED_SOURCE_VERIFIED`, `OWNER_POLICY` are inputs to a review, not values a requester can assert to gain trust. Free text in external artifacts/README/agent outputs is untrusted and cannot alter permission or higher-priority policy.
 
 ## 10. Design-level validation layers and invariants
@@ -173,7 +187,7 @@ Use distinct future layers: **S** = structural shape/version/type checks; **M** 
 | Probe status ≠ requirement oracle ≠ scope evidence; positive/negative validity | M/E | False system success from a completed detector. |
 | v0.1 registry/experience fixtures unchanged; isolated handoff fixtures | Regression checks | Existing CLI interpreting handoff JSON as experience. |
 
-## 11. Design tests W01–W15 (preserved) and proposed extensions
+## 11. Design tests W01–W15 (IDs preserved; wording refined) and proposed extensions
 
 **W01–W15 remain design cases, NOT executed tests or fifteen JSON fixtures.** All future checks need *positive* and *negative* controls; reject-all behavior is not success. W01 should include explicit valid syntax/record parsing in addition to unsupported-version rejection.
 
@@ -193,7 +207,7 @@ Use distinct future layers: **S** = structural shape/version/type checks; **M** 
 | W12 | Legacy experience/registry retained; handoff examples isolated | T12, T20 |
 | W13 | Duplicate immutable ID / invalid supersession rejected | T11 |
 | W14 | Unknown outcome cannot trigger unsafe retry | Execution/retry design |
-| W15 | Valid unexecuted, accepted-not-authorized and completed-defect-probe records accepted | Positive controls P1–P3 |
+| W15 | Three distinct design-only positives: P1 unexecuted, P2 accepted handoff without execution permission, P3 completed probe with failing requirement oracle | Defined in §13; not executed |
 
 **Additional proposed cases, not renumbering W01–W15:**
 
@@ -214,6 +228,9 @@ Use distinct future layers: **S** = structural shape/version/type checks; **M** 
 | W28 | Traversal, encoded traversal and cross-project resolver access rejected | M/E |
 | W29 | `ACCEPTED` + later denied execution may be valid with original acceptance conditions satisfied | M/E |
 | W30 | Proper required `NOT_VERIFIED` scope in a `NOT_RUN` design fixture | S/M |
+| W31 | Public-record privacy negatives (secrets, private local paths, personal/customer data, raw private transcripts) rejected; clean reviewed synthetic record accepted, without claiming full license/security auditing | S/M/E; privacy policy |
+
+**Additional structural negatives to specify at Gate B:** missing required field, extra top-level key, unknown enum, malformed/uppercase/short digest and invalid types; those cases are not yet executed or assigned new W IDs.
 
 **Not wire-validator-complete:** T07/T14 actual GitHub integration and squash branch disposition need live GitHub evidence; T13 distinct harness replay is Gate C/D; real U1–U4/D1 evaluations need permissioned device/API/database test evidence. No new benchmark, agent quality score, completion threshold or capability adoption is claimed.
 
@@ -236,7 +253,7 @@ These **design hypotheses** are copied from `docs/P0_SYNTHETIC_PILOT_SPEC_PROPOS
 
 The authoritative canonical wording and future receipt requirements remain in the source specification; no recreated text overrides it.
 
-## 13. Illustrative complete JSON — positive control P1
+## 13. Positive controls P1–P3 (design-only); complete illustrative JSON for P1
 
 **Fictional planning-only record.** This is not a real source SHA, actor, test, receipt, grant or public release. New candidate fields such as `actor.independence_assessment_ref`, `verification.scopes[].oracle_result` and exact scope-item shape are for **review**, not approved wire encoding. All identities use fictional/project-scoped labels; `fixture:` is non-resolvable in this design example.
 
@@ -311,13 +328,14 @@ The authoritative canonical wording and future receipt requirements remain in th
         "requirement_ref": "fixture:SYNTHETIC-U1-REVIEW-REQUIREMENT",
         "state": "NOT_VERIFIED",
         "oracle_result": "NOT_EVALUATED",
-        "evidence_refs": []
+        "evidence_refs": [],
+        "limitations": ["Synthetic design-only example; no execution, independent review, or oracle observation occurred."]
       }
     ],
     "evidence": [
       {
         "class": "SYNTHETIC_FIXTURE",
-        "ref": "fixture:SYNTHETIC-WIRE-U1-P1-001",
+        "reference": "fixture:SYNTHETIC-WIRE-U1-P1-001",
         "claim": "Fictional design-only example, not a test or receipt"
       }
     ]
@@ -333,6 +351,16 @@ The authoritative canonical wording and future receipt requirements remain in th
 ```
 
 **Sanity checks expected for future validator:** `NOT_RUN`/false attempted/null run receipt/empty output; no permission or real independence; explicit unverified scope; `SYNTHETIC_FIXTURE` only indicates invented example; proposed edge with matched actor Role and no invented input/output. This document's illustrative JSON has not been validated against a real handoff schema because none exists.
+
+### P2 — Accepted handoff, no execution grant (positive design condition)
+
+A future controlled test may represent `handoff_state=ACCEPTED` only with an *authentic, independently verifiable* acceptance receipt from an actual identified counterparty, policy-permitted/trusted inputs accessible at acceptance time, and no handoff-protocol blocker. Execution may stay `NOT_RUN` or be separately denied: **acceptance is not permission to run**. This is a conceptual positive-control definition, not a fabricated live receipt or executed fixture. A future mock verifier must clearly mark synthetic evidence and cannot prove production issuer authentication.
+
+### P3 — Completed defect-detection probe, failing requirement (positive design condition)
+
+A future controlled test may accept an attributable, actually completed `VALIDATES` probe with `execution.state=SUCCEEDED` while its named requirement oracle is `FAIL`, supported by evidence of the observed defect at the applicable verification scope. A successful probe is **not** product PASS. Where completion/producer evidence is absent, it may not claim the verified classes or use P3 as an executed positive. This is only a test design; no probe ran.
+
+**P1/P2/P3 test status:** P1 is the sole full JSON illustration; P2 and P3 are defined semantic conditions, not JSON fixtures, actual grants, tested validators, or production claims. W15 references exactly these three conditions.
 
 ## 14. Finding disposition and version history
 
@@ -364,7 +392,7 @@ Timeline: canonical P0 proposal (repo; design only) → wire v0.1 (Gemini Flash 
 
 ## 15. Open PO decisions and next gates
 
-Still unresolved: exact ref grammar, materialized fixture resolver/trust, exact scope/oracle schema, `self_review`/independence uncertainty encoding, actual owner-attestation channel, grant replay/use policy, expiry/revocation freshness, `REVOKED` enum versus denial+ref, timestamp policy, content normalization, validator approach, contract migration strategy, and gate-specific acceptance criteria. No decision is made by merely including a candidate in this document.
+Still unresolved: read-only grant/standing-policy representation and canonical invariant-5 reconciliation; task/run/use binding and replay verification; optional digest-limit encoding; supersession-fork authority; policy-aware reclassification; minimum completed-run receipts; privacy structural tests; exact ref grammar, materialized fixture resolver/trust, exact scope/oracle schema, `self_review`/independence uncertainty encoding, actual owner-attestation channel, grant replay/use policy, expiry/revocation freshness, `REVOKED` enum versus denial+ref, timestamp policy, content normalization, validator approach, contract migration strategy, and gate-specific acceptance criteria. No decision is made by merely including a candidate in this document.
 
 **Next recommended non-mutating step:** targeted independent design review of this exact v0.3, focusing on C-01/C-02, grant and Actor truthfulness, example JSON, W matrix, and potential new contradictions. A second model review does not replace PO acceptance or real CI/native tests.
 
