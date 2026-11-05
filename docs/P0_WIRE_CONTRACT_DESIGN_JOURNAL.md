@@ -253,3 +253,44 @@ Earlier unshared local report/packet/source-copy SHA-256 values in §§4/9 are *
 **Gate B open:** true read-only owner grant/standing-policy representation and canonical invariant-5 reconciliation; actual receipt task/run/use binding and replay ledger if warranted; optional `digest_limit`; exact typed-ref and materialized fixture grammar; classification/rights policy; receipt requirements for independently verified `SUCCEEDED`; fork-selection authority; `attempted` tri-state under unknown invocation; unverified-review independence encoding; scoped oracle schema; full structural negatives; authorization-check audit receipt; clock/revocation validation; migrations and validator approach. Gate C/D agent pilots remain **NOT STARTED**.
 
 **Publication and review boundary:** These corrections are an **offline, uncommitted draft** until the PO separately authorizes a commit and push to this Draft PR branch. A changed head will require a new required Windows/Ubuntu PR CI run and an exact delta review. No Ready transition, merge, Issue mutation, schema/CLI or registry changes, external installations, release, branch deletion, local worktree cleanup or ChatGPT Project source synchronization is authorized here. The old CI and Claude report do **not** validate revised bytes.
+
+
+## 12. Additive Argon review and R3 correction-plan checkpoint — 2026-11-05 · EGO-P0-WIRE-JOURNAL-005
+
+**Record type:** `SOURCE_REVIEWED` public GitHub checkpoint + `AGENT_REPORTED` independent review + `ASSISTANT PROPOSAL` disposition plan. This journal ID is **not a new `docs/DECISIONS.md` PO decision**, an implemented wire schema, an acceptance certificate or GitHub review approval. **All earlier journal text (including §11.5's then-accurate “offline, uncommitted” statement) is preserved as a historical pre-push snapshot**; do not interpret it as the current branch status. The present R3 draft is an offline follow-up to the already published previous correction.
+
+### 12.1 Source identities and observed current checkpoint
+
+- Protected `main` at read-only verification: `f7f693650b205e6d3f19ac01f51169354e3fd40b` (tree `cbfd52021c208ef80214a4f2634ab356f6de5e86`); no merge authorized or observed.
+- Draft PR [#10](https://github.com/fatihemres/EngineeringOS/pull/10), same `docs/p0-wire-v03-journal-20261104` branch: initial docs commit `6d3aa54b4ecb510aee50e59390e2942f26e4262d`, followed by **docs-only** correction commit `eb0fc5d5218a7d653af696caf0a430971f6df0d5` (tree `d009c3a61e5464a5728dfd6e197086a927a7eaf6`, parent `6d3aa54...`). Only the two designated Markdown files were touched by the latter commit.
+- The new-HEAD GitHub Actions [run `41830446559`](https://github.com/fatihemres/EngineeringOS/actions/runs/41830446559): Ubuntu/Windows required checks **SUCCESS** for `eb0fc5d...`; those are Foundation tests, **not** handoff-wire semantic validation. At this checkpoint, PR #10 remained OPEN/DRAFT and not merged. A later branch SHA or PR state must be checked live.
+- The PR description was observed still mentioning the initial commit and “1 commit”; updating PR metadata is **separate** from the two-document R3 candidate and has no implied authorization.
+
+### 12.2 Independent Argon report — `AGENT_REPORTED`, not acceptance
+
+On 2026-11-05, Google Antigravity **Argon High** supplied a read-only independent review of the exact `eb0fc5d...` GitHub state. Its **official verdict is `BLOCKED`**, because its execution environment could not read the **primary prior Claude N-01–N-18 packet**. The agent did verify public GitHub blobs, commit/diff, canonical P0 source and P1 syntax and gave a distinct **conditional live-source assessment** of **0 CRITICAL, 0 HIGH, 3 MEDIUM and 5 LOW (`R3-01`–`R3-08`)**; this conditional assessment does **not** override `BLOCKED` or constitute an independent PASS. No PR review, schema validator, test fixture or native acceptance was performed by the agent. The report also observed an unrelated local checkout with a different/dirty HEAD and left it untouched.
+
+The earlier Claude review's complete N-01–N-18 table was subsequently recovered from a previous project-conversation file. Its finding descriptions must be made accessible to the **next** reviewer as a separately provided, carefully sanitized review excerpt, not presumed visible in public Git. Importantly, the previously missing finding IDs are:
+
+| Claude finding | Original agent finding (`AGENT_REPORTED`) | R3 disposition proposal; **not independently closed** |
+| --- | --- | --- |
+| `N-11` LOW | Historical journal cited digests of local, non-public report/journal/packet artifacts that a public GitHub reader could not recompute. | Journal §11.5 already labels those as `UNVERIFIABLE_LOCAL`; preserve historical hashes as provenance-only and do not claim externally verified values. `SOURCE_REVIEWED` as text fix; exact historic local bytes remain unavailable publicly. |
+| `N-12` LOW | Boolean `attempted` and `OUTCOME_UNKNOWN` cannot encode a genuinely unknowable invocation start. | Explicitly **OPEN / DEFERRED TO GATE B** for tri-state or attributable invocation-evidence representation; never guess `true`/`false`, fabricate run receipts, or allow unsafe retry. |
+| `N-15` LOW | Earlier v0.2 test-coverage table was removed, leaving a textual summary. Original Claude reviewer wrote “Fine, or restore as a table.” | **ACCEPTABLE DOCUMENTATION CHOICE** to retain W design matrix and explicit out-of-scope test notes; no blanket requirement to restore the older table. Other coverage holes are handled as R3-08 future design cases. |
+
+### 12.3 Argon R3-01–R3-08 disposition proposal (still v0.3, no implementation)
+
+| Agent finding | Agent severity | Proposed correction / boundary | Status |
+| --- | --- | --- | --- |
+| `R3-01` | MEDIUM | Record `N-11`/`N-12`/`N-15` above; link initial Claude vs corrected-v0.3 Argon exact-SHA review timeline. | `ASSISTANT_PROPOSED`, review pending |
+| `R3-02` | MEDIUM | Require authenticated pre-invocation grant/standing policy even for read-only access; `allowed_side_effects:[]` is not permission; unauthorized attempts remain quarantined incidents. | `ASSISTANT_PROPOSED`, Gate B encoding open |
+| `R3-03` | MEDIUM | Fail closed **even for first side-effecting use** if replay cannot be distinguished by enforceable operation/precondition/idempotency binding or consumption state; no blanket `max_uses=1`. | `ASSISTANT_PROPOSED`, Gate B mechanism open |
+| `R3-04` | LOW | Restore canonical distinct `verification.evidence[].class` enum separately from scope verification states. | `ASSISTANT_PROPOSED` |
+| `R3-05` | LOW | Distinguish fictional `PROJECT_INTERNAL` P1 test vector from separately rights-reviewed, `PUBLIC_REUSABLE` `--public` admission positive. | `ASSISTANT_PROPOSED` |
+| `R3-06` | LOW | Human direct-owner exception does not extend to agents/harness sessions inheriting the PO's ambient credentials. | `ASSISTANT_PROPOSED` |
+| `R3-07` | LOW | Update prospective contract publication/review timeline; **append** this dated entry rather than rewriting §11.5's historical pre-push snapshot. | `ASSISTANT_PROPOSED` |
+| `R3-08` | LOW | Name untrusted `failure_details`/`review_notes`; add evidence-promotion/permission/capability/fork design negatives W32–W36 and sync Gate B open decisions. | `ASSISTANT_PROPOSED` |
+
+### 12.4 Evidence and authority limit
+
+These R3 edits remain a **local proposed change-set** unless separately authorized for a new GitHub commit/push. `AGENT_REPORTED BLOCKED` remains the latest supplied external verdict for `eb0fc5d...`, not a PASS for this draft. The previous SHA's Windows/Ubuntu CI does **not** validate these changed bytes, Markdown semantics or a wire schema. Keep Draft PR #10 Draft; no Ready/merge, code/schema/validator changes, project-source sync, installations, release or branch cleanup. The next review should receive original N-01–N-18 excerpts and the exact new document bytes/diff; a new published commit (if ever authorized) requires new exact-SHA CI and review.
