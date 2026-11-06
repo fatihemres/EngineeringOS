@@ -989,3 +989,69 @@ Still open: canonical invariant 4/5 reconciliation; authoritative PO trust/permi
 ### 29.5 This proposed addendum's own publication gate
 
 **This §29 text is a standalone, local-only draft at the date of preparation.** Neither the private full v28 journal nor the public PR #11 branch has been modified with this section. Before any follow-up GitHub commit, re-check the exact current PR/base refs, review the full §29 bytes for truth/privacy/rights, obtain **new exact PO content and GitHub commit permission**, and verify the resulting new PR head and required CI. A separate independent reviewer/dispatch, Ready transition, merge and post-merge verification remain separately gated. Preserve any conflicting future observations with a new dated checkpoint rather than a silent edit to this historic record.
+
+## 30. PR #11 journal integration, post-merge CI and publication-review reconciliation — 2026-11-06 · EGO-P0-WIRE-JOURNAL-023
+
+> **LOCAL-ONLY PUBLICATION CANDIDATE, prepared 2026-11-06; NOT YET APPENDED TO THE CANONICAL GITHUB JOURNAL AT THIS CHECKPOINT.** The live, read-only source lock below confirms that `main` presently ends at §29. This §30 text is a later, separately prepared checkpoint, not a retroactive amendment to §§1–29. Its own future publication, if selected, needs a new exact-content/privacy/rights PO review and separately scoped GitHub branch/commit/PR/integration authorization. A subsequent published copy must be interpreted as a *dated snapshot*, never as an assertion of perpetual `main` state.
+>
+> **Evidence classes:** `PO_DECISION` = the user's separate, in-chat authorizations for PR #11 content, follow-up §29, Ready and exact-head merge (not a machine-authenticated PO receipt); `SOURCE_REVIEWED` = read-only, exact public GitHub commit/PR/file/ruleset evidence; `CI_VERIFIED` = only the existing Foundation workflow on the actual integrated `main` commit; `AGENT_REPORTED` = the user-supplied Gemini 4 Argon High independent publication-review report (reviewer's separate-session and no-mutation claims are not external E-level attestation); `ASSISTANT_PROPOSED` = assessment and remaining-gate recommendations. Do not promote one class to another.
+
+### 30.1 Authorized operation and exact merge receipt
+
+The PO separately authorized moving [PR #11](https://github.com/fatihemres/EngineeringOS/pull/11) to **Ready for Review**, then explicitly authorized **one `merge`-method integration** guarded by expected PR HEAD `a7232380f22a476047a82db563a6b50f979e0bca`. This authority applied only to that PR and integration verification, not branch deletion, cleanup, publication of this §30, release, Gate B.1, settings, agent execution or any other repository mutation. GitHub accepted the exact-head-guarded merge request and returned `merged=true` with merge commit `6e480e61c0cc166bff6f14b50cb3c7c6e56d7685`. Subsequent independent GitHub readback showed:
+
+| Evidence field | Verified GitHub observation · 2026-11-06 |
+| --- | --- |
+| Repository / PR | `fatihemres/EngineeringOS`, [PR #11](https://github.com/fatihemres/EngineeringOS/pull/11): `closed`, `merged=true`, `draft=false`. |
+| Merge timestamp | `2026-11-06T13:35:12Z` = **2026-11-06 16:35:12 Europe/Istanbul**. |
+| Approved PR HEAD (second merge parent) | `a7232380f22a476047a82db563a6b50f979e0bca`. |
+| Former `main` HEAD (first merge parent) | `bc0840a4f6ec44dbf2130a0c32107e46b2416910`. |
+| New `main` HEAD / merge commit | [`6e480e61c0cc166bff6f14b50cb3c7c6e56d7685`](https://github.com/fatihemres/EngineeringOS/commit/6e480e61c0cc166bff6f14b50cb3c7c6e56d7685). |
+| New `main` tree | `c7d42c296980245438274d41a2cf5740cbfa04ef` — same tree as the approved PR HEAD; source change was **docs-only**. |
+| Merge change scope | Only `docs/P0_WIRE_CONTRACT_DESIGN_JOURNAL.md`, **+695 / −0 lines**; no application code, schema, tests or repository settings changed by PR #11. |
+| Source branch disposition | `docs/p0-wire-journal-sections13-28-20261106` **PRESERVED**, observed after merge; deletion/cleanup **NOT RUN**. |
+| Open PRs at checkpoint | **0** (live list at this readback); this is a dated observation, not a future guarantee. |
+
+GitHub ruleset `#26365625` remained active with PR requirement and strict `validate (windows-latest)` and `validate (ubuntu-latest)` checks bound to GitHub Actions App ID `15368`; required approving reviews `0` did **not** replace distinct PO permissions. GitHub PR review submissions for #11 remained `0`. The independent agent review was a separate reported document, not a GitHub `Approve` action.
+
+### 30.2 Byte identity and append-only integration
+
+The original public journal §§1–12 was already canonical on the pre-merge `main`. PR #11 then introduced public/redacted §13–§28 in commit `d4cdf9230b8e44a11b7081716524ccebf11d7125`, followed by a separately PO-authorized append of §29 in commit `a7232380f22a476047a82db563a6b50f979e0bca`. Neither operation deleted historical journal lines. The merged `main` file is **155,098 UTF-8 bytes**, raw-byte SHA-256 `cbe675ae5f22bfeea7e066c6afbc71b5d24b2456974d24061a1a9cf916926072`, Git blob `c87d8fae9b76b1c81a7b49b5f357358301b4f3ff`; it contains numbered **§1–§29**. These identities match the approved PR HEAD, and its first `147,098` bytes preserve the preceding §1–§28 publication candidate. This is **file-content identity evidence**, not a semantic privacy/license certification, cryptographic PO signature or permission receipt.
+
+**Historical-statement reconciliation (without rewriting history):** the opening PR #10 banner and §28's pre-publication wording describe their own older checkpoints. §29.5's phrase that §29 was not yet appended describes §29's **local drafting moment**, before the separately authorized follow-up commit; the observed published facts now supersede that preparatory status. The actual state as of this §30 preparation is **PR #11 MERGED, §1–§29 on canonical `main`, post-merge CI SUCCESS**. Do not silently edit any of the earlier statements; do not attempt to insert this section's own future commit SHA or CI run into its bytes before they exist. A later publication of §30 would require a distinct GitHub workflow and verification.
+
+### 30.3 Post-merge CI: new `main` push evidence, strict scope
+
+The actual merge commit triggered [GitHub Actions run #42226689314](https://github.com/fatihemres/EngineeringOS/actions/runs/42226689314): `event=push`, `head_sha=6e480e61c0cc166bff6f14b50cb3c7c6e56d7685`, `attempt=1`, `status=completed`, **`conclusion=success`**.
+
+| Required check | Exact merge-commit result |
+| --- | --- |
+| [`validate (windows-latest)`](https://github.com/fatihemres/EngineeringOS/actions/runs/42226689314/job/127921854890) | `completed / success` (13:35:18–13:35:37 UTC). |
+| [`validate (ubuntu-latest)`](https://github.com/fatihemres/EngineeringOS/actions/runs/42226689314/job/127921855279) | `completed / success` (13:35:19–13:35:26 UTC). |
+
+This constitutes **`CI_VERIFIED` only for the existing Foundation validation workflow on the integrated `main` SHA**. It is not a Gate B HANDOFF validator, trusted authorization/PEP test, implementation verification, human-native acceptance, third-party rights clearance, S/M/E evidence or release approval. The 36 W, 22 P0-TEST and 10 U/D design cases (68 total) remain `NOT_RUN`; they were not implicitly executed by Markdown documentation CI.
+
+### 30.4 Exact-head independent publication review and unresolved findings
+
+A user-supplied report attributed to a **distinct Google Antigravity / Gemini 4 Argon (High) read-only session** reviewed the exact PR HEAD `a7232380f22a476047a82db563a6b50f979e0bca` and returned **`PASS_WITH_FINDINGS`**: `0 CRITICAL`, `0 HIGH`, `2 MEDIUM`, `2 LOW`. This is `AGENT_REPORTED` (with publicly cross-checked GitHub facts), **not** an independently attested session-separation proof, GitHub review submission, security certification, PO rights clearance or merge authorization.
+
+| Finding | Reported severity | Disposition at this checkpoint |
+| --- | --- | --- |
+| `PR11-IND-01` | MEDIUM | §29's unqualified pre-Commit-2 wording is a **historical status-lag risk**. The PR metadata was clarified before merge; this dated §30 candidate adds post-merge readback without editing §29. No endless self-referential commit cycle. |
+| `PR11-IND-02` | MEDIUM | PR title/body lagged at §§13–28/Commit 1. **Addressed via separately PO-authorized PR metadata-only update** to §§13–29, including both commits, exact blob/digest, Foundation PR-head CI, and limitations; no source commit/HEAD change. |
+| `PR11-IND-03` | LOW | Public-source review cannot independently attest private original-to-derivative fidelity, source ownership, semantic confidentiality or full Apache-2.0 rights eligibility. **OPEN / not legally or independently cleared**; PO-reviewed publication is not an automatic third-party rights warranty. |
+| `PR11-IND-04` | LOW | Preserved initial PR #10 banner and a proposed HANDOFF shorthand (`22 required + 4 optional` fields) risk reader confusion. **Historical wording preserved**; explanatory metadata and future dated clarification recommended, no retroactive editing or wire approval. |
+
+The reviewer judged the pinned diff **suitable for subsequent PO consideration** with stated conditions; the PO then independently authorized the bounded merge. Do not infer that the review resolved all four risks, approved V1 machine-wire, or conferred a GitHub approval. Exact reviewer prose and any raw agent/session records remain out of this public candidate; this table is an attributed, editorial finding index.
+
+### 30.5 Architectural boundary and still-open work
+
+The PO's earlier Gate B.0 closeout remains strictly **`CLOSED — ARCHITECTURE_DIRECTION_REVIEWED`**, conditional on retaining objections, boundaries and residual risk. K1–K6 remain **architectural-direction `PO_DECISION` only**; no exact V1 field/enum/nullability table, production PEP, reliable session independence, authoritative required-scope oracle, replay/revocation protocol, trusted reference resolver, immutable consumed-byte proof, fork authority, or migration/validator was accepted as implemented. The 28 first-round review finding IDs, 13 clusters C01–C13, minority dissent and Codex's `BLOCKED` verdict **for exact machine-wire freeze** remain traceable and technically open. There was no actual Gate B.1 authorization, pilot, test execution, platform acceptance or release.
+
+The GitHub publication established a canonical **public, sanitized design journal through §29**. The separate fuller private journal and raw source/reviewer evidence were **not** automatically uploaded, synchronized, relicensed or merged into Public Core. The user-supplied publication-review report was not posted as raw text to GitHub. A Project Sources update was not performed as part of PR #11. This is an observed scope distinction, not evidence of private-workspace synchronization.
+
+### 30.6 Publication gate and subsequent decisions (not implicitly authorized)
+
+At creation, **§30 exists only as a local draft**. The live repository is verified through §29; the draft is **not** a GitHub commit, GitHub review or new PO decision. If its content is selected for public promotion: (1) PO review the exact text/digest and the privacy/license/rights boundary; (2) separately authorize the one-file branch/commit/remote Draft PR scope; (3) pin current `main` and preserve prior journal bytes; (4) obtain scoped diff review and exact-head Windows/Ubuntu CI; (5) separately authorize any Ready and merge; (6) verify the actual resulting merge parent/tree/file and *new* post-merge `main` push CI. Avoid backdating, silently editing §§1–29 or upgrading an agent report to an external authority receipt.
+
+Open but **not authorized by the PR #11 merge**: new canonical `docs/DECISIONS.md` or `docs/NEXT_DECISIONS.md` decision-publication text, §30 publication, issue changes, source-branch cleanup, release/tag, Gate B.1, code/schema/runner work, private-data synchronization and independent E-level verification. Any new risk or contradicting later GitHub fact should be preserved in a new, dated checkpoint rather than a destructive rewrite.
