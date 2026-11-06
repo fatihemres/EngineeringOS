@@ -938,3 +938,54 @@ The source report's original severity labels and affected IDs are in §26.2. Eac
 - Dated **public** journal status at candidate creation: canonical `docs/P0_WIRE_CONTRACT_DESIGN_JOURNAL.md` published through **§12**; this candidate proposes sanitized additions §§13–28 only. The private original remains intact. A separate **explicit exact-content PO review and permission** plus authorized docs-only GitHub PR/CI/review/merge is required before publication. No branch, commit, push, PR or merge is performed by producing this file.
 
 **END OF PUBLICATION CANDIDATE.** This document is a reviewed-for-preparation *draft*, not itself a published canonical journal, authenticated PO receipt, license clearance or authorization to perform any GitHub mutation.
+
+## 29. PR #11 branch publication, self-review findings and outstanding independent review — 2026-11-06 · EGO-P0-WIRE-JOURNAL-022
+
+> **LOCAL-ONLY DRAFT / PENDING EXACT PO CONTENT REVIEW — NOT APPENDED TO EITHER JOURNAL at the drafting checkpoint.** This prospective §29 entry records the observable status of PR #11 on 2026-11-06. It does not amend the dated assertions in §§1–28, certify publication to `main`, approve a contract or authorize an additional GitHub mutation. Later state changes require a fresh dated readback or append-only correction.
+>
+> **Provenance classes:** `PO_DECISION` applies only to previously authorized publication content and the four scoped GitHub actions; `SOURCE_REVIEWED` applies to exact GitHub refs/metadata; `CI_VERIFIED` applies **only** to the Foundation PR-head validation workflow; `ASSISTANT_PROPOSED` applies to the author's self-review and suggested dispositions. Independent PR #11 review remains `NOT_RUN` / not evidenced. Neither assistant self-review nor a passing CI job constitutes independently verified security, rights clearance or PO merge approval.
+
+### 29.1 Authorized content and actually observed GitHub state
+
+The PO first approved the complete public-safe §§1–28 candidate by SHA-256 `57f0a05449211ed4b1c59edb96538fe9ab8f53ff905685a17f7b6b5ac7d9d48a` (**147,098 UTF-8 bytes**) and then separately approved a dedicated docs branch, a single-file commit, remote branch publication and a `main`-targeted **Draft** pull request. The connected GitHub Contents API wrote the commit directly to the remote branch; no additional local `git push` invocation was performed. A **public branch is already accessible** before integration, but the protected `main` journal still ends at §12.
+
+| Evidence field | Verified GitHub snapshot |
+| --- | --- |
+| Repository / PR | `fatihemres/EngineeringOS`; [PR #11](https://github.com/fatihemres/EngineeringOS/pull/11): **OPEN / DRAFT**, not merged; target `main`. |
+| Branch | `docs/p0-wire-journal-sections13-28-20261106`. |
+| Base `main` HEAD / tree | `bc0840a4f6ec44dbf2130a0c32107e46b2416910` / `9cd607e70b22aaf82074220f4a4e64eff777473f`. |
+| Exact PR HEAD / first parent | `d4cdf9230b8e44a11b7081716524ccebf11d7125` / `bc0840a4f6ec44dbf2130a0c32107e46b2416910`. |
+| PR tree / journal Git blob | `a2eb18bda5bf043c2594bc7bda9ae99cb32af069` / `d2a84df9ce631df8c390ebbc891e2ce76e09507a`. |
+| Changed files / diff | **Only** `docs/P0_WIRE_CONTRACT_DESIGN_JOURNAL.md`; one commit ahead, **+644 / −0**. The approved full-file content matches the returned journal blob. |
+| Protection | Ruleset `#26365625` active; PR required, strict Windows + Ubuntu status checks from Actions App ID `15368`; GitHub required approving reviews `0`. |
+| Current lifecycle / review | `mergeable=true`/`clean` is a GitHub mergeability observation, **not** PO or independent approval. PR review submissions: **0**; inline review threads: **0** at this checkpoint. |
+
+Historical references in §§1–28 to a *pre-PR* or *not-yet-published* candidate were true for their original timestamps. They must not be retroactively rewritten. **The corrected present-tense distinction is: published to an approved public GitHub branch and Draft PR; NOT published into canonical `main`, NOT Ready, and NOT merged.** `docs/DECISIONS.md`, settings, other sources, release tags and Project Sources were not changed by these journal operations.
+
+### 29.2 PR-head CI: exact positive result, narrow meaning
+
+The exact-head [GitHub Actions run #42206253425](https://github.com/fatihemres/EngineeringOS/actions/runs/42206253425), event `pull_request`, head `d4cdf9230b8e44a11b7081716524ccebf11d7125`, attempt 1, completed **SUCCESS**. Its required `validate (windows-latest)` and `validate (ubuntu-latest)` jobs both completed **SUCCESS**.
+
+This is `CI_VERIFIED` for the existing **Foundation** workflow on that exact PR revision, **not** a Gate B handoff-schema validator, real PEP/security test, independent review attestation, rights/privacy approval, §29 validation or post-merge CI. W01–W36, P0-TEST-T01–T22 and U1–U4/D1 negative pilot designs remain **NOT_RUN**; no new tests were invoked for this checkpoint.
+
+### 29.3 Self-review findings, with no fabricated independent verdict
+
+The same assistant that prepared the publication candidate performed this read-only technical review. It should be recorded as **SELF_REVIEW / ASSISTANT_PROPOSED — PASS_WITH_FINDINGS** for narrow content integrity and source-traceability screening only. Earlier Flash, Codex and Argon Gate B.0 architecture reviews concern different pinned inputs and **do not** constitute reviews of PR #11's exact published diff.
+
+| Finding | Severity / gating | Finding and bounded response | Status |
+| --- | --- | --- | --- |
+| **PR11-F01** | `MEDIUM` | Historical banner, §28 and local-draft statements might be mistaken for present GitHub status. **Preserve previous bytes and add a dated clarification (§29)** rather than silently rewriting the original record. | Proposed documentary correction; not yet appended. |
+| **PR11-F02** | `REVIEW_GATE` | No independently attributable PR #11 publication/diff review or recorded GitHub reviewer verdict. A genuinely separate, scoped reviewer must examine the exact ref and state limitations, after appropriate permissions. | **OPEN**; independent current-diff review `NOT_RUN`. |
+| **PR11-F03** | `OPEN_PUBLICATION_RISK` | Pattern screening and PO approval of the exact candidate do not independently prove third-party rights clearance, license compatibility, semantic privacy or source disclosure safety. A human/independent scoped privacy-and-rights pass is still prudent before merge. | **OPEN**; do not label security/license verified. |
+
+No reviewer `APPROVED`, native acceptance, wire freeze, Gate B implementation or authorization to merge is claimed. GitHub's zero-required-approvals setting does not override the project's separate PO approval gates.
+
+### 29.4 Gate B.0 boundaries, objections and open risk preservation
+
+The PO-authorized closeout remains strictly **`CLOSED — ARCHITECTURE_DIRECTION_REVIEWED`**, conditional on recording boundaries, objections and residual risks. K1–K6 are **PO_DECISION only for architectural directions**, not exact mechanisms. The **28 original reviewer finding IDs** and all **13 risk clusters C01–C13** remain open at their technical/evidence layers as indexed in §§26–28; reviewer dissent remains preserved, including Codex's **`BLOCKED` verdict on exact machine-wire freeze**. The reviewer sessions have no separately verified E-level independence proof; the additional Claude Opus review did not run.
+
+Still open: canonical invariant 4/5 reconciliation; authoritative PO trust/permission and model-egress checks; independent Actor/session evidence; mandatory-scope manifests and oracle aggregation; replay and revocation races; typed-ref resolver isolation and raw consumed-byte integrity; reconciliation/fork authority; rights-bound exact public promotion; versioned V1 fields/migration and isolated S/M/E validation. **No** Gate B.1/pilot/implementation, Ready, merge, cleanup, tag/release, settings change or cloud/Project Sources synchronization was authorized by the earlier bounded PR #11 permission.
+
+### 29.5 This proposed addendum's own publication gate
+
+**This §29 text is a standalone, local-only draft at the date of preparation.** Neither the private full v28 journal nor the public PR #11 branch has been modified with this section. Before any follow-up GitHub commit, re-check the exact current PR/base refs, review the full §29 bytes for truth/privacy/rights, obtain **new exact PO content and GitHub commit permission**, and verify the resulting new PR head and required CI. A separate independent reviewer/dispatch, Ready transition, merge and post-merge verification remain separately gated. Preserve any conflicting future observations with a new dated checkpoint rather than a silent edit to this historic record.
