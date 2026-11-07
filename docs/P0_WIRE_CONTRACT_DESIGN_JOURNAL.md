@@ -1055,3 +1055,21 @@ The GitHub publication established a canonical **public, sanitized design journa
 At creation, **§30 exists only as a local draft**. The live repository is verified through §29; the draft is **not** a GitHub commit, GitHub review or new PO decision. If its content is selected for public promotion: (1) PO review the exact text/digest and the privacy/license/rights boundary; (2) separately authorize the one-file branch/commit/remote Draft PR scope; (3) pin current `main` and preserve prior journal bytes; (4) obtain scoped diff review and exact-head Windows/Ubuntu CI; (5) separately authorize any Ready and merge; (6) verify the actual resulting merge parent/tree/file and *new* post-merge `main` push CI. Avoid backdating, silently editing §§1–29 or upgrading an agent report to an external authority receipt.
 
 Open but **not authorized by the PR #11 merge**: new canonical `docs/DECISIONS.md` or `docs/NEXT_DECISIONS.md` decision-publication text, §30 publication, issue changes, source-branch cleanup, release/tag, Gate B.1, code/schema/runner work, private-data synchronization and independent E-level verification. Any new risk or contradicting later GitHub fact should be preserved in a new, dated checkpoint rather than a destructive rewrite.
+
+## 31. PO-approved agent work allocation — 2026-11-07 · `EGO-WORKFLOW-DIRECTION-20261107` (PUBLICATION CANDIDATE)
+
+> **Provenance and boundaries:** `PO_DECISION` applies **only** to the EngineeringOS default agent workflow direction accepted in the 2026-11-07 project conversation. This proposed public journal entry is an `ASSISTANT_PROPOSED` sanitized derivative; its exact publication text, rights/privacy review and any repository actions remain separately gated. `SOURCE_REVIEWED` baseline at preparation: public `main` `e6d8107fb6b13326d4ee753cec27822590658f11`, tree `dd93f27e5486073e8f8c5cd8ae581606cbf5c94a`, current journal Git blob `4cde82ce0386d299836a963a7cab74c6ee4df97f` (Git blob is **not** raw-byte SHA-256).
+
+### 31.1 Authorized workflow *direction*, not execution authority
+
+The PO selected **ChatGPT task/prompt/source preparation → Antigravity Flash High default first production → Codex Astra and Antigravity Argon High separate initial reviews → ChatGPT evidence and dissent reconciliation → PO scoped decision → authorized corrections and targeted re-review**. Claude Opus is reserved for separately permitted deep review or a material unresolved disagreement. Selection depends on verified model access and task-level constraints; never silently change model, budget or recipient.
+
+Each agent task must disclose its model/reasoning, complexity, selection rationale, quota/budget, pinned source/actual bytes, action scope, forbidden operations, privacy/egress boundary and evidence/delivery criteria. Reviewers examine the same pinned common basis in genuine separate sessions and do not exchange initial reports. Preserve `BLOCKED`, uncertainty, minority objections and original source evidence. A model's PASS report is not CI verification, independent-context attestation or PO permission.
+
+### 31.2 Existing risk and publication constraints unchanged
+
+This workflow decision does **not** reopen or extend Gate B.0's conditional architecture-direction closeout, resolve C01–C13 or the 28 findings, execute W01–W36 / P0-TEST-T01–T22 / Gate A negatives (68 `NOT_RUN`), approve exact wire/PEP/oracle/resolver/replay/migration, authorize Gate B.1, or change Foundation v0.1. Public GitHub material is not automatically eligible for upload to an external inference provider. Rights/redaction, exact-content review and recipient-specific PO authorization precede transfers. Prior journal claims must not be rewritten; use a new dated correction for any later contradiction.
+
+### 31.3 Publication and action status at candidate preparation
+
+This §31 text is **not yet in GitHub** and is not a PO-approved exact-text public artifact. No branch, commit, PR, Ready transition, merge, issue update, private source synchronization, test, external reviewer invocation or release is authorized by writing or reviewing this proposal. Protected-main PR/CI and subsequent integration remain distinct PO gates.
