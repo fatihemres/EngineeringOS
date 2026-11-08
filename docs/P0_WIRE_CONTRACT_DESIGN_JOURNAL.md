@@ -1073,3 +1073,11 @@ This workflow decision does **not** reopen or extend Gate B.0's conditional arch
 ### 31.3 Publication and action status at candidate preparation
 
 This §31 text is **not yet in GitHub** and is not a PO-approved exact-text public artifact. No branch, commit, PR, Ready transition, merge, issue update, private source synchronization, test, external reviewer invocation or release is authorized by writing or reviewing this proposal. Protected-main PR/CI and subsequent integration remain distinct PO gates.
+
+### 31.4 Draft PR #13 publication and provenance checkpoint — 2026-11-08
+
+**SOURCE_REVIEWED / dated status:** The source baseline `main` `e6d8107fb6b13326d4ee753cec27822590658f11` already includes journal §30, integrated through merged PR #12. The earlier §31.3 wording describes its pre-commit candidate-preparation moment; it must not be read as a present-tense statement about GitHub availability.
+
+**Separate publication states:** The §31 candidate was first prepared as an internal proposal, then published for review on the public Draft PR #13 feature branch. At this checkpoint the independently readable PR was **OPEN / DRAFT**, with reviewed HEAD `651bee19104fab2c882788c4ebb19d0dee5d1d0f`; `main` still pointed to `e6d8107fb6b13326d4ee753cec27822590658f11`. These are dated observations, not assertions about any later follow-up HEAD. Git history and PR metadata establish subsequent branch states. Branch publication does not equal canonical `main` integration, rights clearance, PO Ready/merge authorization or external session attestation.
+
+**Preservation and gates:** All preceding journal text (§§1–31.3) is retained byte-for-byte; this dated clarification is append-only. The workflow decision remains scope-limited and does not alter the open Gate B wire risks, the 68 `NOT_RUN` designs, Foundation v0.1 or Gate B.1 authorization. New PR-head CI, targeted independent re-review, Ready, merge, release and cleanup each retain their applicable distinct approval or verification gate.
