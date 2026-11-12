@@ -219,3 +219,91 @@ The six companion families remain **conceptual responsibility boundaries**. The 
 This public PR checkpoint cites only **already-public EngineeringOS contracts, journal and operating rules** and adds newly authored bounded editorial candidates. It contains no raw transcript, internal candidate excerpt, private file/recipient metadata, private agent report or secret. The fuller separately controlled private architecture candidate and any private finding-register version are **not** uploaded, independently byte-verified or admitted for public publication by this checkpoint. Comparison against all private-source-specific constraints is therefore **NOT_VERIFIED** here.
 
 **Result:** C1-R9 is **ASSISTANT_PROPOSED / REVIEW_PENDING**. No new P0 decision, exact-wire freeze, reviewer resolution, Gate B.1, new CI test coverage, private-data sync, release or merge occurs by appending this section. Prior sections 1–10 remain historical and unchanged.
+
+## 12. Dated checkpoint — 2026-11-12 / C1-R10: Decision-Ready Exact-Wire Alternatives
+
+> **ASSISTANT_PROPOSED / PUBLIC SOURCE_REVIEWED / DESIGN-ONLY / NOT_RUN**  
+> **Pinned public main:** `2f31e248bf82f64870bb9591aafdfc53261add19`.  
+> **Prior PR #16 source head:** `15321a22e13be6627c312b0048b5408b5be9121c`.  
+> **Source claims:** canonical P0 handoff contract blob `3d8548643956636a5283c0e6bd126b9b0e22b6e3`; P0 wire proposal blob `9b0e861fd5655f25d5adbd3e7706e78a6731c481`; public journal blob `101cdb9442089bf3307ee9afcbae119d5732c249`; public `AGENTS.md` blob `c7951764e6d209d81dad3fc5baf8c2d0b5b2a992`.  
+> **Disclosure:** Public-source-derived candidate specifications only. No private G2 text, internal registers, hidden source mapping, agent session material, raw transcript, or private rights evidence is included. This checkpoint **does not independently verify private-source fidelity**.
+>
+> This checkpoint **extends, never rewrites**, C1-R9 in section 11. The alternatives are **not** adopted schema definitions, validated JSON examples, actual receipt formats, PO decisions, or implementation authorization.
+
+### 12.1 Six bounded decisions; one preferred candidate each
+
+| ID and R9 mapping | Candidate A — preferred for later PO consideration | Candidate B — acceptable if the same invariant is proven | Reason / non-negotiable blocker |
+| --- | --- | --- | --- |
+| **R10-D01** (R9-D01) Dispatch/invocation/outcome | **A:** distinct versioned observation axes in the `ACTOR_EXECUTION_RECEIPT` responsibility: local dispatch, remote invocation, target outcome, attribution and observation point | **B:** one structured event/history model that is demonstrably lossless for all four facts, including uncertain transport | A single `execution.state`, ACK or local runner exit cannot establish actual remote start/commit. Unknown must survive crashes and reconciliation. |
+| **R10-D02** (R9-D02) `attempted` unknown | **A:** newly versioned `boolean \| null` for `execution.attempted`, plus separate attributable uncertainty evidence | **B:** a new explicit attempted-status enum with authenticated mapping back to HANDOFF | Legacy Boolean meaning must not change silently. `NOT_RUN=false` remains strict. Unknown invocation is not `false`; `CANCELLED` pre-/post-start status still needs rules. |
+| **R10-D03** (R9-D03) Executed self-review classification | **A:** newly versioned conditional `actor.self_review: boolean \| null` + independently resolved assessment for credit scope | **B:** preserve a Boolean only with a separate explicit, unforgeable unknown classification and no forced false/true value | Canonical P0 invariant 4 **currently requires true/false for executed evaluative reviews**. This conflict is **BLOCKED pending explicit versioned PO resolution**; independence unknown is neither proven self-review nor independent credit. |
+| **R10-D04** (R9-D04) Independent review round preservation | **A:** immutable, attributable report and input-manifest refs for each blind initial reviewer pass, with separate subsequent additive reports and chronology evidence | **B:** a different sealed artifact/event ledger that proves identical input exposure ordering and immutable first reports | A new model name, reported session, or report timestamp cannot certify actual isolation. Later reports cannot overwrite first-pass findings. |
+| **R10-D05** (R9-D05) Requirement oracle and gate result | **A:** scope-level oracle in candidate `verification.scopes[]` plus **external** authorized required-scope manifest and separate trusted aggregate evaluator result | **B:** an explicit top-level oracle field only if it cannot masquerade as global product PASS, while all required-scope authority and aggregation remain externally enforced | Historical disagreement over mandatory top-level `oracle_result` remains intact. Probe `SUCCEEDED` is not requirement PASS; missing mandatory scopes and unqualified objections cannot yield aggregate PASS. |
+| **R10-D06** (R9-D06) Companion receipt composition | **A:** claim-specific relational compatibility checked by a trusted verifier over each receipt's applicable subject, source, operation/attempt, recipient, scope, time, restriction and environment facts | **B:** a normalized evidence-join manifest with the same enforceable relation checks, not a naive all-fields-equal rule | Each receipt being authentic is insufficient. Different supported propositions, mutable refs, inconsistent environment or mismatched recipients must not be silently composed into verified credit. |
+
+**PO decision state:** `NOT_REQUESTED / ASSISTANT_PROPOSED` for all R10-D01–D06. No preferred A option is self-executing permission or a vote against the documented reviewer dissent. Alternatives are technically admissible only after detailed S/M/E proof and scope review.
+
+### 12.2 Minimum conditional information profile (logical interface, not release JSON)
+
+| Responsibility | Minimum logical binding for any claim requesting promoted credit | Conditional/no-credit rule |
+| --- | --- | --- |
+| Execution / dispatch | Immutable record version+ID; project/task/source; Actor/session; logical operation and unique attempt where applicable; dispatch boundary; witnessed invocation/outcome/attribution; observation-time and limitations | A completed task with missing externally attributable completion evidence is **not verified**; absence of a run receipt is not fabricated into one. Pre-dispatch denial is a non-attempt. |
+| Reviewer independence | Reviewed exact artifact/clause scope; producer and reviewer actual Actor/session; known common inputs; material contribution/disclosure; input exposure chronology; immutable first-report identity; assessor authority | Executed unknown separation does **not** count toward mandatory independent credit. Source/report content can be retained as an attributed claim. |
+| Gate evaluation | Exact subject+revision; authorized/versioned mandatory-scope manifest; prospective evaluation criteria; applicable scopes/qualified exceptions; admission/evidence frontier; all relevant accounted-for gate-credit attempts; scope results, limitations and evaluator identity | Missing, failed or unverifiable mandatory evidence, unresolved in-scope dissent or unqualified waiver prevents unconditional aggregate PASS. |
+| Receipt composition | Exact target proposition, each receipt's authentic issuer/source/subject, supported claim, observation point, relevant environment, validity/cutoff, current restrictions and genuine recipient/action bindings | Do not require unrelated fields to match blindly, but reject incompatible assumptions or unsupported broad conclusions. |
+| Owner/grant checks | Authentic owner/grantee, approved action and protected read/egress resource scope, validity, revocation freshness, logical effect and target-side precondition where necessary | A claimed receipt ref or `allowed_side_effects=[]` never authorizes a protected read or remote model transfer by itself. |
+| Artifact integrity | Trusted project-scoped resolution of real consumed/produced bytes, immutable identity, actual hash of the correct byte stream, non-byte limitations | A source Git blob SHA, `fixture:` ref or 64-hex placeholder does not prove that a downstream consumer saw the same raw bytes. |
+
+These bindings may be represented by the existing **six conceptual companions**, external trusted control planes, or equivalent independently proven evidence. **Do not introduce a new mandatory HANDOFF top-level field or an eighth record family by implication.** The exact nested field names, enum vocabularies, receipt envelopes, issuer authentication and persistence shape remain open.
+
+### 12.3 Invariant compatibility and adoption blockers
+
+| Existing public rule | R10 impact | Disposition / adoption precondition |
+| --- | --- | --- |
+| Invariant 1: `NOT_RUN=false`, receipt null, no output | **Preserved** | Planned records stay correctly representable. An unknown *real* invocation uses an explicit new version candidate, not `NOT_RUN`. |
+| Invariant 3: `independent_context=true` demands real receipt/comparison, `self_review=false` | **Preserved, not weakened** | Verified independent credit requires distinct non-producer, separately evidenced context. No self-attestation. |
+| Invariant 4: executed evaluations require `self_review=true/false` | **Conflict** with R10-D03 A | PO must approve exact new-version replacement rule and migration behavior; do **not** silently reinterpret old compliant records. |
+| Invariant 5: active scoped permission before invocation | **Preserved, evidence expanded** | Unknown/unauthorized observed start is quarantined truth, not retroactive permission. Read and egress require actual independent enforcement. |
+| Invariant 7: scoped verification; no missing-required-scope PASS | **Preserved** | Trusted manifest, attempt frontier and gate decision scope separate from Actor self-report. |
+| Invariant 8: no silent promotion of unknown/conflicting state | **Preserved** | Unknown outcome and receipt conflict cannot become success through version migration or aggregation. |
+| Snapshot/receipt rules: immutable handoff and distinct responsibility families | **Preserved** | Later observations are separate attributable records; a `retry_of` or `supersedes_ref` assertion is not automatic replay/supersession authority. |
+
+**Specific blockers for later independent review:** Ambiguous version/null mapping; executed-review unknown forced into a false statement; no truthful pre-dispatch crash case; fake acceptance/grant from bare refs; scope completeness determined by Actor; unaccounted official probe attempts; incompatible receipt joins; unbounded replay/cutoff claims; fabricated digest/consumed bytes; downgraded legacy security restrictions. The historical Codex exact-wire `BLOCKED` remains **OPEN** independent of this newly proposed list.
+
+### 12.4 Minimal decision order and acceptance checks
+
+| Order | Decision dependency | Why this order matters | Proposed evidence before PO adoption |
+| --- | --- | --- | --- |
+| 1 | **R10-D01 + D02** (invocation and tri-state) | Every later attempt, replay and receipt rule needs a truthful observation basis | Distinct `NOT_RUN`, pre-start blocked, started/unknown, uncertain dispatch, cancelled-before/after-start; positive and negative design examples |
+| 2 | **R10-D03 + D04** (independent review/phase proof) | Source authorship and sealed review rounds constrain who may supply gate credit | Same producer, unknown separation, genuine non-author reviewer, contamination and later-report mutation negatives |
+| 3 | **R10-D05** (oracle/manifest) | Required-scope completeness and genuine gate decision cannot derive from task success | Completed defect probe `FAIL`, missing scope, partial CI, qualified exception and retest-history controls |
+| 4 | **R10-D06** (composition) | Gate credit and protected actions depend on compatible evidence from distinct authorities | Genuine but incompatible recipient/source/environment/validity examples; properly compatible positive |
+
+The order is a **suggestion for separate PO consideration**, not an automatic dependency granting authority. Acceptance here means design-level reviewability; real E boundary and Gate B.1 runtime approval remain separate.
+
+### 12.5 Focused adversarial set (new C1 design-only references, NOT_RUN)
+
+| ID | Test thought experiment | Expected result |
+| --- | --- | --- |
+| R10-T01 | Task only planned; no attempt or output | Accept valid planning snapshot (S/M) |
+| R10-T02 | Dispatch attempted, ACK lost; caller sets `NOT_DISPATCHED` | Reject no-dispatch claim without authoritative proof |
+| R10-T03 | Invocation started, remote result unknown; no attributed completion receipt | Preserve started/unknown; withhold promoted completion |
+| R10-T04 | Executed reviewer, no genuine separation; `self_review=false` inferred | Withhold independent credit; expose invariant-4 version conflict |
+| R10-T05 | Real non-author reviewer in proved distinct context and valid blind pass | Eligible only within assessed clause/gate scope |
+| R10-T06 | Later review phase mutates initial signed-off findings | Reject mutation; preserve original and additive later report |
+| R10-T07 | Completed defect-detection probe: execution success, required oracle FAIL | Accept observed failure; deny product/gate PASS |
+| R10-T08 | Actor omits mandatory scope or selectively submits last PASS only | Deny unqualified aggregate PASS |
+| R10-T09 | Genuine receipts independently authentic but mismatched subject/destination/environment | Reject their combined gate/authority proof |
+| R10-T10 | Genuine scoped acceptance followed by revoked execution permission | Preserve true acceptance; deny execution |
+| R10-T11 | Unresolved mutating attempt retried solely with new ID/grant | Deny until authentic current authority **and** real combined-effect target safety established |
+| R10-T12 | Authentic compatible receipts with matching supported proposition | Allow **only** the specifically evidenced claim, not blanket E certification |
+
+**Test status:** R10-T01–T12 are `ASSISTANT_PROPOSED / NOT_RUN` scenarios, not executed tests, registered runtime assertions, or new canonical W IDs. The original **68 NOT_RUN** remain 68 NOT_RUN.
+
+### 12.6 Decision briefing and next checkpoint
+
+At this checkpoint the PO has **not selected A or B for any R10-D decision**. The preferred alternatives merely identify the next narrow review questions. Adopting a representation later would require separately approved version/enum/null tables, explicit invariant-4/5 reconciliation, authorized source/egress and actual negative/positive evidence. No claim of actual trusted PEP, target commitment enforcement, qualified reviewer attestation, receipt authenticity, migration safety or full JSON Schema coverage is made.
+
+**Proposed next:** C1-R11 **Minimal V1 Wire Delta and Migration Preconditions**: show precisely which changed nested fields or companion shapes are truly necessary after the PO's exact selection, and which enforcement obligations must remain outside JSON. Do not draft or ship validators, migrations, tools or code without new task-specific PO authorization.
+
+**Publication and gate limits:** This is a new public-safe append-only documentation checkpoint for the same Draft PR only. The earlier sections remain unchanged. No private-origin source bytes or raw historical reports are published. No Ready transition, merge, project sync, release, test/agent execution or milestone closure is authorized by this checkpoint.
