@@ -349,3 +349,20 @@ The newly recovered original reviewer reports do **not** support every finding-t
 **Persistent states unchanged:** Proposed G2 public derivative **NOT_APPROVED_FOR_PUBLICATION**; the existing C1 worklog remains a public-safe working ledger; 28 original technical findings/13 clusters **OPEN**; 68 canonical scenarios **NOT_RUN**; exact wire **BLOCKED**; Gate B.1 **NOT_STARTED / NOT_AUTHORIZED**. There is no approval here for public source transfer, reviewer egress, code, validator, Ready transition, merge, release or cleanup.
 
 **Next proposed in-scope investigation:** Produce a narrowly scoped, privately sourced D5 correction matrix checked against actual reviewer report topics and original severity, rather than recycling the intermediate report's labels; separately establish concrete source/model/provider ownership and fulfillment obligations. Make any future corrected public derivative a newly pinned exact version subject to its own PO rights/privacy and destination approval.
+
+
+## 15. Dated checkpoint — 2026-11-16 / G2 D5 attribution reconciliation (public status only)
+
+> **SOURCE_REVIEWED (specific non-public reviewer text in an access-controlled comparison) / ASSISTANT_PROPOSED (corrective overlay) / PRIVATE-ORIGIN MATERIAL WITHHELD / RIGHTS_NOT_VERIFIED / REVIEW_PENDING**
+
+Following the recovery described in §14, a **separate, private-only** comparison was completed for the eight previously recorded D5 correction groups against the available original first-pass technical and adversarial review texts. Their topic, severity, and recurring finding-to-group relationships were assessed independently of the intermediate **self-reported** correction table.
+
+**Outcome:** The intermediate report's claimed preservation of source severity/topic is **not fully supported by the original source reports**. The private dated correction overlay preserves the original findings and identifies mismatches without retroactively editing reviewer material. Reused findings across groups are not new independent findings. **No original review finding was closed, renumbered or re-severitied by this public status entry.**
+
+The corrected mapping itself, first-pass reports, source locators, original private identities and content excerpts **remain outside the public PR**. The assertion that the historical group mapping was PO-mandated is preserved as **reported provenance**, not upgraded to an authenticated owner decision merely because the intermediate report claims it. Actual reviewer/producer identity, distinct-session proof, sealed first-pass ordering, adopted-expression provenance and downstream redistribution rights are **NOT_VERIFIED**.
+
+**Open publication checks:** independently confirm the complete contributing-source and rights chain, any applicable provider/third-party terms and affirmative fulfillment, a genuinely corrected later companion if it exists, full exact-artifact semantic privacy review, and a separate PO exact-byte/destination publication approval before any public G2 derivative is committed.
+
+**Unchanged project gates:** G2 derivative **NOT_APPROVED_FOR_PUBLICATION**, historical 28 technical findings and 13 clusters **OPEN**, 68 original design scenarios **NOT_RUN**, exact machine wire **BLOCKED**, Gate B.1 **NOT_STARTED / NOT_AUTHORIZED**. Foundation CI on this documentation PR (if successful) verifies neither reviewer provenance nor G2 E-tier claims. No external reviewer, runtime test, private-source publication, Ready, merge, release or cleanup is approved by this checkpoint.
+
+**Next proposed private step:** source-clause-level comparison between the independently recovered first-pass findings, adopted remedy text and the latest candidate; determine actual rights/notice obligations separately from clause-level independent-review eligibility. Do not silently interpret an editorial correction as reviewer acceptance or source license.
