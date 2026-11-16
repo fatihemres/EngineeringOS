@@ -381,3 +381,23 @@ Following §15, a **separate private-only source-to-clause assessment** has been
 **Next proposed evidence:** verify applicable contributor/output-license and provider terms, source-rights lineage, real adopted-expression attribution, independent reviewer/session eligibility and any final-package notice obligations inside an approved private boundary. Preserve the original reviewer reports and all corrections append-only; do not use unresolved private metadata to imply an approved public artifact.
 
 **Unchanged EngineeringOS gates:** original 28 reviewer findings and 13 risk clusters **OPEN**; original 68 scenarios **NOT_RUN**; exact machine-wire **BLOCKED**; Gate B.1 **NOT_STARTED / NOT_AUTHORIZED**. No private material transfer, technical tests, agent invocation, Ready, merge, release or project sync is authorized by this checkpoint.
+
+
+## 17. Dated checkpoint — 2026-11-16 / G2 contributor and license preflight (public status only)
+
+> **SOURCE_REVIEWED (already-public provider and project policies) / ASSISTANT_PROPOSED (bounded application) / PRIVATE_INPUTS_WITHHELD / RIGHTS_NOT_VERIFIED / PUBLICATION_NOT_AUTHORIZED**
+
+A **private-only provider-terms and contributor-rights assessment** has been prepared for the unapproved G2 derivative. This checkpoint shares **no** private G2 text, per-session identity, account/plan inventory, input classification history, reviewer wording, source paths, private provenance manifest, personal account settings or private hashes.
+
+### Bounded public-policy finding
+
+- Ordinary generative-AI output is **not categorically prohibited** from open-source documentation contributions under the presently examined vendor public output-rights terms for certain specific consumer and commercial routes. The Apache Software Foundation's *Generative AI Tool Terms: Review Results* table is explicitly a **draft, not adopted ASF guidance**; its dated tool/tier-specific categories address only a **subset** of contract-output questions and are **not** evidence of the user's actual generation route, third-party copyrights, source permission, independent review or any exact G2 rights clearance.
+- Google Antigravity's own publicly posted additional terms apply alongside Google universal terms; its **third-party model selection** provision further refers to the selected model's terms (including Anthropic commercial terms for the specified Anthropic route). Consumer ChatGPT, direct Claude Pro, Gemini AI Pro, Antigravity and API/commercial arrangements **must not** be collapsed into one blanket output-rights grant.
+- Existing EngineeringOS public `LICENSE`, `NOTICE` and `LICENSES_THIRD_PARTY.md` correctly distinguish original Public Core grants from third-party source/linked tools. Their presence does **not** silently license a controlled-source derivative or satisfy any newly applicable attribution obligations.
+- Applicable contract **version at actual model use**, authoritative actor/route, input and model-egress permission, materially reused third-party expression and final public metadata/NOTICE obligations are **NOT_VERIFIED** for the specific G2 publication package. No infringement is established by this evidence gap; neither is public redistribution clearance.
+
+### Narrow next private gate
+
+Prepare a **minimum necessary** actual-usage/source-rights manifest (service and selected model *type*, exact applicable terms/versions, generated-output provenance and input classification/rights, no raw transcripts or secrets), then human-review any applicable license/notice obligations and final G2 bytes. Only a distinct PO exact-artifact plus destination authorization can allow committing that controlled derivative to a public PR; privacy and rights clearance do not arise from CI.
+
+**Status unchanged:** G2 public derivative **NOT_APPROVED_FOR_PUBLICATION**; historical 28 findings and 13 risk clusters **OPEN**, 68 original scenarios **NOT_RUN**, exact wire **BLOCKED**, Gate B.1 **NOT_STARTED / NOT_AUTHORIZED**. This checkpoint is documentation only and approves no input export, independent review session, test/runtime, Ready transition, merge, release or cleanup.
