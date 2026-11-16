@@ -366,3 +366,18 @@ The corrected mapping itself, first-pass reports, source locators, original priv
 **Unchanged project gates:** G2 derivative **NOT_APPROVED_FOR_PUBLICATION**, historical 28 technical findings and 13 clusters **OPEN**, 68 original design scenarios **NOT_RUN**, exact machine wire **BLOCKED**, Gate B.1 **NOT_STARTED / NOT_AUTHORIZED**. Foundation CI on this documentation PR (if successful) verifies neither reviewer provenance nor G2 E-tier claims. No external reviewer, runtime test, private-source publication, Ready, merge, release or cleanup is approved by this checkpoint.
 
 **Next proposed private step:** source-clause-level comparison between the independently recovered first-pass findings, adopted remedy text and the latest candidate; determine actual rights/notice obligations separately from clause-level independent-review eligibility. Do not silently interpret an editorial correction as reviewer acceptance or source license.
+
+
+## 16. Dated checkpoint — 2026-11-16 / G2 source-to-clause and rights preflight (public status only)
+
+> **SOURCE_REVIEWED (private controlled inputs, not exported) / ASSISTANT_PROPOSED (interpretation) / RIGHTS_NOT_VERIFIED / G2_PUBLICATION_NOT_AUTHORIZED / REVIEW_PENDING**
+
+Following §15, a **separate private-only source-to-clause assessment** has been prepared to distinguish conceptual issue-response alignment from literal source-expression reuse, actual reviewer authorship, independently eligible reviewer credit and public redistribution rights. This checkpoint intentionally reports only a high-level **governance state**, not a corrected private attribution table, a private finding quotation, source filenames, private artifacts, hashes, reviewer sessions, or a source-rights certificate.
+
+**Disposition unchanged:** textual conceptual design convergence is **not** reviewer approval or E-level enforcement proof. Neither an exact-string comparison nor the existence of a candidate/CI receipt authorizes reproduction or redistribution; genuine contributing-source/provider rights, any affirmative obligations and a complete final-artifact privacy assessment still need independent checks. A finding author's substantive adopted normative contribution, if genuinely established, must be scoped separately when assigning independent reviewer credit. A high-level suggestion alone cannot be assumed to prove co-authorship.
+
+**Publication gate:** The proposed G2 public derivative remains **NOT_APPROVED_FOR_PUBLICATION** and is not part of this Draft PR. An attributable, exact final-artifact **and metadata/destination** PO review must follow source/rights/privacy checks before any public-branch publication. The underlying private record and this private review are not public by virtue of this status entry.
+
+**Next proposed evidence:** verify applicable contributor/output-license and provider terms, source-rights lineage, real adopted-expression attribution, independent reviewer/session eligibility and any final-package notice obligations inside an approved private boundary. Preserve the original reviewer reports and all corrections append-only; do not use unresolved private metadata to imply an approved public artifact.
+
+**Unchanged EngineeringOS gates:** original 28 reviewer findings and 13 risk clusters **OPEN**; original 68 scenarios **NOT_RUN**; exact machine-wire **BLOCKED**; Gate B.1 **NOT_STARTED / NOT_AUTHORIZED**. No private material transfer, technical tests, agent invocation, Ready, merge, release or project sync is authorized by this checkpoint.
