@@ -307,3 +307,28 @@ At this checkpoint the PO has **not selected A or B for any R10-D decision**. Th
 **Proposed next:** C1-R11 **Minimal V1 Wire Delta and Migration Preconditions**: show precisely which changed nested fields or companion shapes are truly necessary after the PO's exact selection, and which enforcement obligations must remain outside JSON. Do not draft or ship validators, migrations, tools or code without new task-specific PO authorization.
 
 **Publication and gate limits:** This is a new public-safe append-only documentation checkpoint for the same Draft PR only. The earlier sections remain unchanged. No private-origin source bytes or raw historical reports are published. No Ready transition, merge, project sync, release, test/agent execution or milestone closure is authorized by this checkpoint.
+
+
+## 13. Dated checkpoint — 2026-11-16 / G2 Public-Promotion Preflight (status only)
+
+> **ASSISTANT_PROPOSED / SOURCE_REVIEWED (public governance) / PRIVATE-DERIVATIVE-UNPUBLISHED / RIGHTS_NOT_VERIFIED / REVIEW_PENDING**
+>
+> This public checkpoint records only the *state of a publication decision*, **not** the private G2 design text, a transcript, a private digest/locator, a reviewer report, or a license grant. Its purpose is durable GitHub continuity while the exact candidate remains outside public Git.
+
+### 13.1 Observed bounded preparation
+
+- A separately controlled conceptual G2 draft informs later C1 design questions. A revised **private-review-only derivative** and private change/provenance checklist have been prepared for PO examination; **their actual content and private provenance are not published by this checkpoint**.
+- The candidate must accurately disclose that its substantive prose is a selective derivative of controlled material; public P0 documents and the canonical journal are **architecture-decision references**, not independent proof of authorship or full redistribution rights.
+- The private draft lineage and historical reviewer-contribution mapping have **not** been independently completed from original contributor evidence. A limited visible-text scan and a reconstructed-content digest match are **not** a complete privacy, source-license, provider-contract or ownership clearance.
+- The accepted K1–K6 **architecture directions** are not an adoption of all detailed candidate properties, runnable trusted PEP, exact V1 wire, verified independent sessions, authorization replay safety, or real E-tier enforcement.
+
+### 13.2 Explicit publication blockers
+
+1. Establish contributing-source rights, applicable model/provider and third-party obligations, and any required notices before choosing public redistribution/license terms.
+2. Perform complete human semantic privacy/metadata review and inspect the *entire exact final public artifact*, not only a changed-lines summary.
+3. Obtain **separate PO authorization for that exact artifact and destination** before introducing it to any public branch, including this Draft PR. No existing docs-only worklog authorization is automatic permission to export the underlying controlled G2 text.
+4. After a specifically authorized public change, verify exact PR-head diff and required CI; qualified independent review, Ready, merge, post-merge checks and branch cleanup remain separate scope-bound steps.
+
+**State at checkpoint:** G2 derivative publication **NOT_AUTHORIZED / NOT_RUN**; privacy/rights clearance **NOT_VERIFIED**; the private local review artifacts are **not persisted by this public repository** and require independently approved private backup if long-term private retention is desired. This checkpoint by itself changes no Gate B disposition: original 28 findings/13 clusters **OPEN**, original 68 scenarios **NOT_RUN**, historical exact-wire **BLOCKED**, Gate B.1 **NOT_STARTED / NOT_AUTHORIZED**.
+
+**Next action proposed:** source-specific contributor/rights trace and full exact-file human review in the private boundary. Do **not** post the private delta/provenance report to GitHub or to external reviewers merely to speed up a technical review.
