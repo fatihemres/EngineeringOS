@@ -145,3 +145,40 @@ Bu çalışma, MyLibrary'yi baştan tasarlayıp kabul ettirme kararı değildir.
 PO'nun hedefi, EngineeringOS'a taşınabilir; ürün vizyonundan başlayabilen, gerektiğinde başlangıçta kısa PO yön kalibrasyonu yapan, **yaratıcılığı varsayılan olarak özgür bırakan**, tüm UI/UX'u sahiplenen, araçları göreve göre seçen, alternatifleri karşılaştıran, tek ortak tasarım sunan ve gerçek hareket/erişilebilirlik/bağımsız kalite kanıtı üreten bir tasarım çalışma kültürüdür. Geliştirme sırasında Codex'in tasarım desteğini ne zaman çağıracağını anlama fikri de araştırılmaktadır. Bunlar **PO vizyonu ve aday mimari fikirleridir**; uygulanmış otomasyon veya kalıcı EngineeringOS kuralları değildir.
 
 Bu kayıt orijinal kanıtların yerine geçmez. Yeni bir araştırmada önce güncel repo durumu ve değişmiş PO kararları kontrol edilmeli; eksik deney kaynakları, izinler, maliyet ve görsel kabul ayrı kaydedilmelidir. Bu araştırma kaydının ayrı belge dalında commit/push edilmesi ve Draft PR açılması **2026-11-11 tarihli kapsamla sınırlı PO iznine** dayanır. İlerideki ek repo değişiklikleri, EngineeringOS çalışma protokollerinin kabulü, `main` entegrasyonu ve release/yayın için **ayrı açık PO izni** gerekir.
+
+---
+
+## 11. 23 Kasım 2026 — doğrulanmış kaynak devri ve araştırma kapanış notu
+
+**Tarihsel kayıt korunur.** Yukarıdaki §1–10, 11 Kasım'daki bilgi durumunu anlatır. O gün E3 devam ediyordu; aşağıdaki yeni bulgular o kronolojiyi geriye dönük değiştirmez. Bu belge EngineeringOS Draft PR #15 için **araştırma/handoff adayıdır**, kabul edilmiş süreç, otomasyon veya EngineeringOS ana dal entegrasyonu değildir.
+
+### 11.1 Güncel kaynak ve doğrulama
+
+- **MyLibrary V2:** 13e469579db1b702e0fb0b1fc6f92ee75d671c15. [PR #61](https://github.com/fatihemres/MyLibrary/pull/61) ve [PR #62](https://github.com/fatihemres/MyLibrary/pull/62) MERGED; her iki entegrasyon sonrası push CodeQL Rust, JavaScript/TypeScript ve Actions 3/3 PASS. Council kaynakları artık [entegre MyLibrary kanıt defterinde](https://github.com/fatihemres/MyLibrary/blob/13e469579db1b702e0fb0b1fc6f92ee75d671c15/docs/development/devex/DESIGN_COUNCIL_EVIDENCE_AND_ENGINEERINGOS_HANDOFF.md) ve [beş bağımsız tarihli incelemede](https://github.com/fatihemres/MyLibrary/tree/13e469579db1b702e0fb0b1fc6f92ee75d671c15/docs/development/devex/reviews) bulunuyor. Eski Draft PR #59 ve 11 Kasım SHA bilgileri yalnızca tarihsel kaynak olarak geçerlidir.
+- **Kanıt sınırı:** PR #62 kaynak/gizlilik/delta bağımsız incelemesi PASS WITH NOTES idi. 12 tarihsel Markdown hard line break'in korunması, **yalnızca o PR için PO tarafından onaylanan özel istisna** oldu: tam git diff --check exit 2, üç satırlık gizlilik düzeltmesi delta kontrolü exit 0. Bu, EngineeringOS genel lint politikası değildir.
+- **EngineeringOS main:** 2f31e248bf82f64870bb9591aafdfc53261add19. PR #15 hâlâ Draft. Bu aktarım, EngineeringOS main, diğer Draft PR #16, eklenti, güvenlik ayarı, otomasyon veya uygulama kodu değiştirmez.
+- **MyLibrary kapsamı:** M2/#31, Wishlist M3-B/#26 ve restore #54 yalnızca PO'nun sınırlı idari kabulüyle kapatıldı, yeni test sonucu yaratılmadı. M3-C nihai kabul #32, Collections keşif #33, UX #27, DevEx #47/#51, Council #52 ve M3'ün geneli açık. Bunlar EngineeringOS için otomatik ürün kararı değildir.
+
+### 11.2 11 Kasım'dan sonra doğrulanan deney dersleri
+
+- **E3 / E3-R1:** E3-R1 v6 kaynak paketi için 249/249 manifest girdisi ve 24/24 kaynak hash'i bağımsız olarak kontrol edildi, 17 WebM kaydı sağlandı. Aynı kaynak üzerinde A/B/C/D görüşleri ve bir itirazın yeni kanıttan sonra geri çekilişi raporlandı. PO gerçek hızlı hareketin eski “çötenk” hissinden belirgin biçimde uzaklaştığını, ancak **hızlı arka arkaya tıklamada ara sıra takılma** olduğunu bildirdi. Bu pozitif yön geri bildirimi **final PO tasarım kabulü, native FPS/DPI/a11y testi veya üretim entegrasyonu değildir**.
+- **D0 yaratıcı yön:** Reading Table / Okuma Masası, Catalogue Desk / Katalog Masası ve Page by Page / Sayfa Sayfa karşılaştırıldı. PO en çok **Reading Table** görsel duygusunu ve kitap tıklama hissini beğendi; masaüstü kompozisyonu ve renk dengesi açık kaldı. Hafif erken kalibrasyon, tüm tasarımın seçildiği anlamına gelmez.
+- **D1 kısmi çalışma:** Ponytail FULL'nin yaratıcı katılımcı bağlamlarına etkisi ilk preflight'ta doğru biçimde durduruldu. Daha sonra yeni, süreç-yerel OFF bağlamında sınırlı deneme yapıldı; hook-event telemetrisi bütünüyle doğrulanamadı. İki shell ve dört katılımcı görüşü içeren kısmi dosyalar incelendi. PO **etiketli sol navigasyon rayını** tercih etti, rota değişimindeki aşağı zıplama ve aşırı seyrek görünüm sorunlarını bildirdi. **D1 final tasarım ve PO native kabulü yok.**
+- **Gerçek V2 native başlangıç incelemesi:** Sentetik Tauri/WebView2 çalışmasından gelen altı yolculuk kanıtı, beş ayrı UX/klavye/arama triage adayı üretti. Bu, Council prototipi ya da uygulanmış üretim düzeltmesi değildir; MyLibrary UX #27 ayrı kapıdır.
+- **Kanıt ile kalite ayrımı:** Host 62/62, kaynak hash PASS, birden fazla Council oyu, seçilmiş kareler ve CI PASS yalnızca kendilerine ait teknik kapsamı kanıtlar. Normal hız PO incelemesi, native/erişilebilirlik kanıtı ve gerçek ürün kabulü ayrıca gerekir.
+
+### 11.3 EngineeringOS için yeniden kullanılabilir yöntem adayı — henüz benimsenmedi
+
+1. **Koşullu erken yön kalibrasyonu:** Yeni ürün/büyük görsel yön için kısa ve gerçekten farklı örnekler ve gerekiyorsa gerçek motion gösterimi; mevcut kabul edilmiş yönde veya küçük düzeltmede tekrar oylama yok.
+2. **Bağımsız başlangıç, ortak eleştiri, tek sonuç:** Farklı perspektifler öneri sunsun; ardından katılımcılar aynı gerçek render ve normal hızdaki hareket üzerinde karşı örnek gösterip revize etsin. Aktör/oturum bağımsızlığı kanıtlanmadan bağımsız review iddiası olmasın.
+3. **Bütünsel UX sahipliği:** PO'nun saydığı kusurlarla sınırlanmayıp gezinme, tipografi, TR/EN, odak/klavye, modal, reduced motion, hızlı tersine geçiş, hata/performance durumları denetlensin; iyi mevcut davranışlar korunsun.
+4. **Araç ve bütçe ekonomisi:** Daha fazla ajan, token veya Motion/GSAP/skill kurulumu otomatik kalite değildir. Ana deneyimde hareketi kapatıp “polished” ilan eden E2 karşı örneği korunmalı; gerçek üstünlük kanıtlanmadan yeni bağımlılık benimsenmemeli.
+5. **Yetki sınırı:** Kullanıcı ürünü, PO kabulü, lisans, özel veri, repo mutasyonu ve release ayrı kapılar olarak kalır. EngineeringOS'ta otomatik Council router, zorunlu team üyeleri veya kalıcı Ponytail ayarı çalışıyormuş gibi anlatılmaz.
+
+Bu maddeler Public Core için **ileride değerlendirilebilecek özgün yöntem sentezidir**; mevcut workflows/ui-ux-craft.md, AGENTS.md veya docs/DECISIONS.md değiştirilmedi. Kalıcı policy/otomasyon için ayrı PO kararı, bağımsız inceleme ve entegrasyon gerekir.
+
+### 11.4 Public Core / Private Workspace ve tamamlanma sınırı
+
+- Bu güncelleme, MyLibrary'de **zaten kamuya açık** olan kanıta dayalı araştırmanın kaynak-atıflı yeni editoryal sentezidir. Ham deney ZIP'leri, WebM'ler, tüm konuşma/oturum logları, tarayıcı profilleri, çerezler, özel ekran görüntüleri, kimlik bilgileri, yerel kişisel dizinler ve hak incelemesi yapılmamış materyal bu PR'a aktarılmaz.
+- EngineeringOS [PRIVACY](../PRIVACY.md) ve [RESEARCH_IMPORT](../RESEARCH_IMPORT.md) sınırları geçerlidir. **Private Workspace'e gerçek arşiv aktarımı yapılmadı; Public Core sürecine terfi edilmedi.** Bu yalnızca araştırma ve PO vizyonu kaydının güncellenmesidir.
+- **Durum:** Eski deneylerin geçmişi ve 23 Kasım sonraki gelişmeleri bu tek belge içinde kronolojik olarak korunur. PR #15'in exact-SHA bağımsız belge/gizlilik incelemesi, güncel CI, PO belge kabulü ve EngineeringOS main entegrasyonu ayrı kapılardır. Başka PR/Issue, ayar, skill, release veya cleanup değişikliği bu yazımla yetkilendirilmez.
